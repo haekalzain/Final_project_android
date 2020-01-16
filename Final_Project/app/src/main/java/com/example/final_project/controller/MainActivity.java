@@ -1,8 +1,10 @@
-package com.example.final_project;
+package com.example.final_project.controller;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.final_project.R;
 
 public class MainActivity extends AppCompatActivity {
 
