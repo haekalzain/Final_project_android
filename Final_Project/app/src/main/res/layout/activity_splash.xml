@@ -6,10 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".controller.SplashActivity">
 
-    <TextView
+    <ImageView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="@string/judul_utama"
+    android:src="@drawable/logo"
+    android:background="@color/colorOrange"
+        
     android:layout_centerHorizontal="true"
     android:layout_centerVertical="true"/>
 
