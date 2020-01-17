@@ -18,6 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/Img"
+        android:textSize="20dp"
         android:text="POWERED BY SHIFTED 1"
         android:textAlignment="center"/>
 
