@@ -29,13 +29,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:id="@+id/lldatanasabah">
+                android:id="@+id/lldatapeminjaman">
                 <TextView
-                    android:id="@+id/datanasabah"
+                    android:id="@+id/datapeminjaman"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="bottom|center_horizontal"
-                    android:text="Data Nasabah"
+                    android:text="Data Peminjaman"
                     android:textColor="#fff"
                     android:textStyle="bold"
                     app:autoSizeTextType="uniform"
@@ -59,16 +59,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:id="@+id/lldaftarnasabah">
-            <TextView
-                android:id="@+id/daftarnasabah"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="bottom|center_horizontal"
-                android:text="Form Daftar Nasabah"
-                android:textColor="#fff"
-                android:textStyle="bold"
-                app:autoSizeTextType="uniform"/>
+                android:id="@+id/lldaftarpeminjaman">
+                <TextView
+                    android:id="@+id/daftarpeminjaman"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="bottom|center_horizontal"
+                    android:text="Form Daftar Peminjaman"
+                    android:textColor="#fff"
+                    android:textStyle="bold"
+                    app:autoSizeTextType="uniform"/>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
@@ -78,7 +78,7 @@
         android:layout_height="0dp"
         android:layout_weight="4">
         <FrameLayout
-            android:id="@+id/framenasabah"
+            android:id="@+id/framepeminjaman"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
     </LinearLayout>

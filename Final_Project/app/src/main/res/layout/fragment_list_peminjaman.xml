@@ -24,7 +24,7 @@
             android:layout_weight="1"
             >
             <SearchView
-                android:id="@+id/searchnasabah"
+                android:id="@+id/searchpeminjaman"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:iconifiedByDefault="false"
@@ -40,7 +40,6 @@
                 android:layout_height="wrap_content"
                 android:text="Search"
                 android:background="#f3801f"
-                
                 />
         </LinearLayout>
 
