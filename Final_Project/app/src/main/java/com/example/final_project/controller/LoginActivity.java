@@ -8,19 +8,18 @@ import android.os.Handler;
 
 import com.example.final_project.R;
 
-public class SplashActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash);
+        setContentView(R.layout.activity_login);
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent= new Intent(SplashActivity.this,LoginActivity.class);
+                Intent intent= new Intent(LoginActivity.this,MainActivity.class);
                 startActivity(intent);
             }
-        },2000);
-    }
-
+        },7000);
+        }
 }
