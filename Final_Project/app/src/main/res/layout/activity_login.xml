@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorOrange"
-    android:weightSum="5">
+    android:weightSum="6">
 
     <!--    atas-->
     <LinearLayout
@@ -19,52 +19,50 @@
             android:layout_weight="2">
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="2">
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="2">
-        </LinearLayout>
 
     </LinearLayout>
     <!--    akhir atas-->
     <!-- awal login   -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:weightSum="10"
         android:orientation="horizontal"
         android:background="@color/colorOrange">
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="2">
         </LinearLayout>
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="2"
+            android:layout_weight="0.5"
             android:background="@color/colorWhite">
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_weight="5"
+            android:weightSum="9.5"
             android:orientation="vertical"
             android:background="@color/colorWhite">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5">
+            </LinearLayout>
+
 
             <!--   margin top     -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="0.75">
+                android:layout_weight="2">
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -72,48 +70,129 @@
                     android:src="@drawable/logo"
                     />
             </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5">
+            </LinearLayout>
             <!--   isi form login     -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="0.5">
-                <EditText
-                    android:layout_width="match_parent"
+                android:background="@drawable/colomstyle"
+                android:layout_weight="1.75"
+                android:weightSum="4"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:background="@drawable/colomstyle"
-                    android:textSize="25dp"
-                    android:textStyle="italic"
-                    android:hint="Username">
-                </EditText>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="0.2">
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="0.5">
-                <EditText
-                    android:layout_width="match_parent"
+                    android:layout_weight="0.1">
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:background="@drawable/colomstyle"
-                    android:textSize="25dp"
-                    android:textStyle="italic"
-                    android:hint="Password">
-                </EditText>
+                    android:layout_weight="0.5">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/user"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.1">
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3.3">
+
+                    <EditText
+                        android:id="@+id/usernametxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textSize="25dp"
+                        android:hint="Username"
+                        android:background="@null">
+
+                    </EditText>
+                </LinearLayout>
             </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="0.2">
-            </LinearLayout>
+
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="0.5">
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@drawable/colomstyle"
+                android:layout_weight="1.75"
+                android:weightSum="4"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.1">
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/password"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.1">
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3.3">
+
+                    <EditText
+                        android:id="@+id/passwordtxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textSize="25dp"
+                        android:hint="Password"
+                        android:background="@null">
+
+                    </EditText>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.75">
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:orientation="vertical">
+
                 <Button
+                    android:id="@+id/loginbtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="20dp"
@@ -123,18 +202,20 @@
                     android:backgroundTint="@color/colorOrange"
                     android:background="@drawable/colomstyle">
                 </Button>
+
             </LinearLayout>
+
             <!-- akhir form login   -->
         </LinearLayout>
         <!-- akhir margin bottom       -->
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="2"
+            android:layout_weight="0.5"
             android:background="@color/colorWhite">
         </LinearLayout>
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="2">
         </LinearLayout>
@@ -145,7 +226,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_weight="2">
     </LinearLayout>
     <!--    akhir bawah-->
 </LinearLayout>
