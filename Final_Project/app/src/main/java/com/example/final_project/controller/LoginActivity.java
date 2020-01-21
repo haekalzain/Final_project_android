@@ -7,13 +7,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.example.final_project.R;
 import com.example.final_project.model.baseResponse;
 import com.example.final_project.res.ApiClient;
 import com.example.final_project.res.ApiInterface;
-import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 
 import retrofit2.Call;
@@ -22,6 +22,7 @@ import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity {
     Button login;
+    LinearLayout forgotPassword;
     EditText username, password;
     ApiInterface mApiInterface;
     @Override
@@ -37,9 +38,20 @@ public class LoginActivity extends AppCompatActivity {
         login = findViewById(R.id.loginbtn);
         username = findViewById(R.id.usernametxt);
         password = findViewById(R.id.passwordtxt);
+        forgotPassword = findViewById(R.id.forgotPassword);
     }
 
     void onClick() {
+        //forgotPassword
+        forgotPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            Intent intent = new Intent( LoginActivity.this, ForgetPasswordActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        //login
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,7 +64,7 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<baseResponse> call, Response<baseResponse> response) {
                         if (response.isSuccessful()) {
-                            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                            Intent intent = new Intent(LoginActivity.this, ForgetPasswordActivity.class);
                             startActivity(intent);
                         } else {
                             Toast.makeText(getApplicationContext(), response.message(), Toast.LENGTH_LONG).show();
