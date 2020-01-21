@@ -30,19 +30,49 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:id="@+id/lldatanasabah">
-                <TextView
-                    android:id="@+id/datanasabah"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:gravity="bottom|center_horizontal"
-                    android:text="Data Nasabah"
-                    android:textColor="#fff"
-                    android:textStyle="bold"
-                    app:autoSizeTextType="uniform"
-                    />
+                    android:layout_weight="2"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/datanasabah"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="bottom|center_horizontal"
+                            android:text="Data Nasabah"
+                            android:textColor="#fff"
+                            android:textStyle="bold"
+                            app:autoSizeTextType="uniform"
+                            />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/efekdatanasabah"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@color/colorGrey"
+                        />
+                </LinearLayout>
+
             </LinearLayout>
 
         </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.1">
+
+        </LinearLayout>
+
         <LinearLayout
 
             android:layout_width="0dp"
@@ -60,15 +90,38 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:id="@+id/lldaftarnasabah">
-            <TextView
-                android:id="@+id/daftarnasabah"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="bottom|center_horizontal"
-                android:text="Form Daftar Nasabah"
-                android:textColor="#fff"
-                android:textStyle="bold"
-                app:autoSizeTextType="uniform"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/daftarnasabah"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="bottom|center_horizontal"
+                            android:text="Form Daftar Nasabah"
+                            android:textColor="#fff"
+                            android:textStyle="bold"
+                            android:textAlignment="center"
+                            app:autoSizeTextType="uniform"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:id="@+id/efekdaftarnasabah"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@color/colorGrey">
+                    </LinearLayout>
+
+                </LinearLayout>
+
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

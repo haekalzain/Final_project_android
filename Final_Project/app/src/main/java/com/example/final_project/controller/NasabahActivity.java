@@ -6,6 +6,7 @@ import androidx.fragment.app.FragmentTransaction;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -17,12 +18,14 @@ import com.example.final_project.fragment.ListNasabahFragment;
 public class NasabahActivity extends AppCompatActivity {
     FrameLayout framenasabah;
     FragmentTransaction fm;
-    LinearLayout lldatanasabah,lldaftarnasabah;
+    LinearLayout lldatanasabah,lldaftarnasabah,efekdatanasabah,efekdaftarnasabah;
     TextView datanasabah,daftarnasabah;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+//        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+//        WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_nasabah);
         findViewById();
         initAction();
@@ -37,10 +40,9 @@ public class NasabahActivity extends AppCompatActivity {
             fm = getSupportFragmentManager().beginTransaction();
             fm.replace(R.id.framenasabah,new ListNasabahFragment());
             fm.commit();
-            lldatanasabah.setBackgroundColor(Color.parseColor("white"));
-            datanasabah.setTextColor(Color.parseColor("#f3801f"));
-            lldaftarnasabah.setBackgroundColor(Color.TRANSPARENT);
-            daftarnasabah.setTextColor(Color.parseColor("white"));
+            efekdatanasabah.setVisibility(View.VISIBLE);
+            efekdaftarnasabah.setVisibility(View.GONE);
+
         }
     });
     lldaftarnasabah.setOnClickListener(new View.OnClickListener() {
@@ -49,10 +51,8 @@ public class NasabahActivity extends AppCompatActivity {
             fm = getSupportFragmentManager().beginTransaction();
             fm.replace(R.id.framenasabah,new DaftarNasabahFragment());
             fm.commit();
-            lldaftarnasabah.setBackgroundColor(Color.parseColor("white"));
-            daftarnasabah.setTextColor(Color.parseColor("#f3801f"));
-            lldatanasabah.setBackgroundColor(Color.TRANSPARENT);
-            datanasabah.setTextColor(Color.parseColor("white"));
+            efekdaftarnasabah.setVisibility(View.VISIBLE);
+            efekdatanasabah.setVisibility(View.GONE);
         }
     });
     }
@@ -63,5 +63,7 @@ public class NasabahActivity extends AppCompatActivity {
         lldaftarnasabah=findViewById(R.id.lldaftarnasabah);
         datanasabah=findViewById(R.id.datanasabah);
         daftarnasabah=findViewById(R.id.daftarnasabah);
+        efekdaftarnasabah=findViewById(R.id.efekdaftarnasabah);
+        efekdatanasabah=findViewById(R.id.efekdatanasabah);
     }
 }

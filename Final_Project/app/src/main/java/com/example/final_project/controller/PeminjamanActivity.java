@@ -19,7 +19,7 @@ import com.example.final_project.fragment.ListPeminjamanFragment;
 public class PeminjamanActivity extends AppCompatActivity {
     FrameLayout framepeminjaman;
     FragmentTransaction fm;
-    LinearLayout lldatapeminjaman,lldaftarpeminjaman;
+    LinearLayout lldatapeminjaman,lldaftarpeminjaman,efekdatapeminjaman,efekdaftarpeminjaman;
     TextView datapeminjaman,daftarpeminjaman;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,10 +38,8 @@ public class PeminjamanActivity extends AppCompatActivity {
                  fm = getSupportFragmentManager().beginTransaction();
                  fm.replace(R.id.framepeminjaman,new ListPeminjamanFragment());
                  fm.commit();
-                 lldatapeminjaman.setBackgroundColor(Color.parseColor("white"));
-                 datapeminjaman.setTextColor(Color.parseColor("#f3801f"));
-                 lldaftarpeminjaman.setBackgroundColor(Color.TRANSPARENT);
-                 daftarpeminjaman.setTextColor(Color.parseColor("white"));
+                 efekdatapeminjaman.setVisibility(View.VISIBLE);
+                 efekdaftarpeminjaman.setVisibility(View.GONE);
              }
          });
          lldaftarpeminjaman.setOnClickListener(new View.OnClickListener() {
@@ -50,10 +48,8 @@ public class PeminjamanActivity extends AppCompatActivity {
                  fm = getSupportFragmentManager().beginTransaction();
                  fm.replace(R.id.framepeminjaman,new DaftarPeminjamanFragment());
                  fm.commit();
-                 lldaftarpeminjaman.setBackgroundColor(Color.parseColor("white"));
-                 daftarpeminjaman.setTextColor(Color.parseColor("#f3801f"));
-                 lldatapeminjaman.setBackgroundColor(Color.TRANSPARENT);
-                 datapeminjaman.setTextColor(Color.parseColor("white"));
+                 efekdaftarpeminjaman.setVisibility(View.VISIBLE);
+                 efekdatapeminjaman.setVisibility(View.GONE);
              }
          });
     }
@@ -64,5 +60,7 @@ public class PeminjamanActivity extends AppCompatActivity {
         lldaftarpeminjaman=findViewById(R.id.lldaftarpeminjaman);
         datapeminjaman=findViewById(R.id.datapeminjaman);
         daftarpeminjaman=findViewById(R.id.daftarpeminjaman);
+        efekdatapeminjaman=findViewById(R.id.efekdatapeminjaman);
+        efekdaftarpeminjaman=findViewById(R.id.efekdaftarpeminjaman);
     }
 }
