@@ -3,196 +3,358 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_weight="5"
+    android:weightSum="5"
     android:orientation="vertical"
     tools:context=".controller.MainActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:weightSum="5"
+        android:orientation="vertical"
+        android:background="@drawable/latar2">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:background="@drawable/latar2">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="2">
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:orientation="vertical">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="HELLO"
-                android:textStyle="bold|italic"
-                android:textSize="28dp"
-                android:textColor="@color/colorWhite"/>
-
-            <TextView
-                android:id="@+id/txtNamaCO"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:text="-Nama CO-"
-                android:textStyle="bold|italic"
-                android:textSize="25dp"
-                android:textColor="@color/colorWhite"/>
-            </LinearLayout>
-
+            android:layout_weight="1">
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="4"
+            android:layout_weight="3"
+            android:weightSum="6"
             android:orientation="horizontal">
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="6">
+                android:layout_weight="1">
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="2"
-                android:orientation="vertical">
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.25">
-
-                <TextView
-                    android:id="@+id/txtSelamatDatang"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="SELAMAT DATANG"
-                    android:textSize="30dp"
-                    android:textStyle="bold|italic"
-                    android:textColor="@color/colorOrange"
-                    android:textAlignment="center"/>
-            </LinearLayout>
-
-            //Nasabah
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.25"
-                android:orientation="vertical">
-
-             <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="6">
-
-                 <Button
-                 android:id="@+id/btnNasabah"
-                 android:layout_width="match_parent"
-                 android:layout_height="match_parent"
-                 android:background="@drawable/button"
-                 android:text="NASABAH"
-                 android:textColor="@color/colorOrange"
-                 android:textStyle="bold"
-                 android:textSize="25dp"/>
-
-             </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="3">
-                </LinearLayout>
-            </LinearLayout>
-
-
-            //Finance
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.25"
+                android:layout_weight="4"
+                android:weightSum="4"
                 android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="6">
+                    android:layout_weight="2"
+                    android:orientation="vertical">
 
-                    <Button
-                        android:id="@+id/btnFinance"
+                    <TextView
+                        android:id="@+id/hallotxt"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="@drawable/button"
-                        android:text="FINANCE"
-                        android:textColor="@color/colorOrange"
-                        android:textStyle="bold"
-                        android:textSize="25dp"/>
+                        android:text="HELLO"
+                        android:textAlignment="center"
+                        android:textSize="25dp"
+                        android:textColor="@color/colorWhite"
+                        android:textStyle="bold"/>
                 </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="3">
-                </LinearLayout>
-            </LinearLayout>
-
-
-
-            //Payment
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.25"
-                android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="6">
+                    android:layout_weight="2"
+                    android:orientation="vertical">
 
-                    <Button
-                        android:id="@+id/btnPayment"
+                    <TextView
+                        android:id="@+id/NamaCotxt"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="@drawable/button"
-                        android:text="PAYMENT"
-                        android:textColor="@color/colorOrange"
-                        android:textStyle="bold"
-                        android:textSize="25dp"/>
-                </LinearLayout>
+                        android:text="Nama CO"
+                        android:textAlignment="center"
+                        android:textSize="25dp"
+                        android:textColor="@color/colorWhite"
+                        android:textStyle="bold"/>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="3">
                 </LinearLayout>
-
             </LinearLayout>
 
-            //logo
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        android:weightSum="7"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:weightSum="10"
+            android:orientation="vertical">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="0.25"
-                android:orientation="vertical">
+                android:layout_weight="0.5">
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="SELAMAT DATANG"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorOrange"
+                    android:textSize="25dp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5">
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:weightSum="4.5"
+                android:orientation="horizontal">
 
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1">
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2">
+
+                    <ImageButton
+                        android:id="@+id/btnNasabah"
+                        android:background="@drawable/button"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/nasabah"
+                        android:outlineSpotShadowColor="@color/colorOrange"
+                        android:scaleType="centerInside"/>
+
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5">
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2">
+
+
+                    <ImageButton
+                        android:id="@+id/btnFinance"
+                        android:background="@drawable/button"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/finance"
+                        android:elevation="4dp"
+                        android:scaleType="centerInside"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5"
+                android:weightSum="4.5"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Nasabah"
+                        android:textStyle="bold"
+                        android:textSize="18dp"
+                        android:textAlignment="center"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5">
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Finance"
+                        android:textStyle="bold"
+                        android:textSize="18dp"
+                        android:textAlignment="center"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5">
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:weightSum="4.5"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2">
+
+                    <ImageButton
+                        android:id="@+id/btnPayment"
+                        android:background="@drawable/button"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/payment"
+                        android:elevation="4dp"
+                        android:scaleType="centerInside"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5">
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2">
+
+
+                    <ImageButton
+                        android:id="@+id/btnSetting"
+                        android:background="@drawable/button"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/setting"
+                        android:elevation="2dp"
+                        android:scaleType="centerInside"/>
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5"
+                android:weightSum="4.5"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Payment"
+                        android:textStyle="bold"
+                        android:textSize="18dp"
+                        android:textAlignment="center"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5">
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Setting"
+                        android:textStyle="bold"
+                        android:textSize="18dp"
+                        android:textAlignment="center"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5">
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5">
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:weightSum="5"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
                     android:layout_weight="3">
 
                     <ImageView
@@ -201,12 +363,20 @@
                         android:src="@drawable/logo"/>
                 </LinearLayout>
 
-            </LinearLayout>
-            </LinearLayout>
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="6">
+                    android:layout_weight="1">
+                </LinearLayout>
+
             </LinearLayout>
+
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+        </LinearLayout>
+    </LinearLayout>
 </LinearLayout>
