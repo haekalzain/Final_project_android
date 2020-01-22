@@ -12,23 +12,21 @@
         android:theme="@style/AppTheme">
 
         <activity android:name=".controller.ForgetPasswordActivity"></activity>
-        <activity android:name=".controller.NasabahActivity"/>
         <activity android:name=".controller.MainActivity" />
         <activity android:name=".controller.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity
-            android:name=".controller.LoginActivity"
-            android:screenOrientation="portrait" >
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN"/>
-            <category android:name="android.intent.category.LAUNCHER"/>
-        </intent-filter>
+        <activity android:name=".controller.PeminjamanActivity" android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".controller.PeminjamanActivity" android:screenOrientation="portrait" />
-        <activity android:name=".controller.PembayaranActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".controller.LoginActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".controller.NasabahActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".controller.PembayaranActivity" android:screenOrientation="portrait" >
+        </activity>
+
 </application>
 
 </manifest>

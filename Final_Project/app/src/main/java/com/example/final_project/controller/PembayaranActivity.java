@@ -19,7 +19,7 @@ import com.example.final_project.fragment.ListPeminjamanFragment;
 public class PembayaranActivity extends AppCompatActivity {
     FrameLayout framepembayaran;
     FragmentTransaction fm;
-    LinearLayout lldatapembayaran,lldaftarpembayaran;
+    LinearLayout lldatapembayaran,lldaftarpembayaran,efekdatapembayaran,efekdaftarpembayaran;
     TextView datapembayaran,daftarpembayaran;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,10 +38,8 @@ public class PembayaranActivity extends AppCompatActivity {
                  fm = getSupportFragmentManager().beginTransaction();
                  fm.replace(R.id.framepembayaran,new ListPembayaranFragment());
                  fm.commit();
-                 lldatapembayaran.setBackgroundColor(Color.parseColor("white"));
-                 datapembayaran.setTextColor(Color.parseColor("#f3801f"));
-                 lldaftarpembayaran.setBackgroundColor(Color.TRANSPARENT);
-                 daftarpembayaran.setTextColor(Color.parseColor("white"));
+                 efekdatapembayaran.setVisibility(View.VISIBLE);
+                 efekdaftarpembayaran.setVisibility(View.GONE);
              }
          });
          lldaftarpembayaran.setOnClickListener(new View.OnClickListener() {
@@ -50,10 +48,9 @@ public class PembayaranActivity extends AppCompatActivity {
                  fm = getSupportFragmentManager().beginTransaction();
                  fm.replace(R.id.framepembayaran,new DaftarPembayaranFragment());
                  fm.commit();
-                 lldaftarpembayaran.setBackgroundColor(Color.parseColor("white"));
-                 daftarpembayaran.setTextColor(Color.parseColor("#f3801f"));
-                 lldatapembayaran.setBackgroundColor(Color.TRANSPARENT);
-                 datapembayaran.setTextColor(Color.parseColor("white"));
+                 efekdaftarpembayaran.setVisibility(View.VISIBLE);
+                 efekdatapembayaran.setVisibility(View.GONE);
+
              }
          });
     }
@@ -63,5 +60,7 @@ public class PembayaranActivity extends AppCompatActivity {
         lldaftarpembayaran=findViewById(R.id.lldaftarpembayaran);
         datapembayaran=findViewById(R.id.datapembayaran);
         daftarpembayaran=findViewById(R.id.daftarpembayaran);
+        efekdatapembayaran=findViewById(R.id.efekdatapembayaran);
+        efekdaftarpembayaran=findViewById(R.id.efekdaftarpembayaran);
     }
 }

@@ -6,18 +6,31 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".controller.PembayaranActivity"
     android:orientation="vertical"
-    android:layout_weight="5">
+    android:layout_weight="9"
+    android:background="@drawable/header">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        >
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:drawableLeft="@drawable/back"
+            android:text="Kembali"
+            android:textColor="@color/colorWhite"
+            android:background="@android:color/transparent"/>
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:background="@drawable/latar2">
+        android:layout_weight="1.5">
         <LinearLayout
 
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_weight="2"
             android:orientation="vertical">
             <LinearLayout
                 android:layout_width="match_parent"
@@ -30,45 +43,95 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:id="@+id/lldatapembayaran">
-                <TextView
-                    android:id="@+id/datapembayaran"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:gravity="bottom|center_horizontal"
-                    android:text="Data Pembayaran"
-                    android:textColor="#fff"
-                    android:textStyle="bold"
-                    app:autoSizeTextType="uniform"
-                    />
+                    android:layout_weight="2"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/datapembayaran"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="bottom|center_horizontal"
+                            android:text="Data Pembayaran"
+                            android:textColor="#fff"
+                            android:textStyle="bold"
+                            app:autoSizeTextType="uniform"
+                            />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/efekdatapembayaran"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@color/colorGrey"
+                        />
+                </LinearLayout>
             </LinearLayout>
-
         </LinearLayout>
-        <LinearLayout
 
+
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_weight="0.15">
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
             android:orientation="vertical">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="3">
-
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:id="@+id/lldaftarpembayaran">
-                <TextView
-                    android:id="@+id/daftarpembayaran"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:gravity="bottom|center_horizontal"
-                    android:text="Form Daftar Pembayaran"
-                    android:textColor="#fff"
-                    android:textStyle="bold"
-                    app:autoSizeTextType="uniform"/>
+                    android:layout_weight="2"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/daftarpembayaran"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="bottom|center_horizontal"
+                            android:text="Form Daftar Peminjaman"
+                            android:textColor="#fff"
+                            android:textStyle="bold"
+                            android:textAlignment="center"
+                            app:autoSizeTextType="uniform"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:id="@+id/efekdaftarpembayaran"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@color/colorGrey">
+                    </LinearLayout>
+
+                </LinearLayout>
+
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
@@ -76,11 +139,12 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="4">
+        android:layout_weight="7">
         <FrameLayout
             android:id="@+id/framepembayaran"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:background="@color/colorWhite"/>
     </LinearLayout>
 
 
