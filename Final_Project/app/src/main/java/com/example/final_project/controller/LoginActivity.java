@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,6 +16,8 @@ import com.example.final_project.model.baseResponse;
 import com.example.final_project.res.ApiClient;
 import com.example.final_project.res.ApiInterface;
 import com.google.gson.JsonObject;
+
+import java.util.logging.Logger;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -56,13 +59,14 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 JsonObject json = new JsonObject();
-                json.addProperty("nik", username.getText().toString());
+                json.addProperty("username", username.getText().toString());
                 json.addProperty("password", password.getText().toString());
                 Call<baseResponse> coCalled = mApiInterface.postCo(json);
 
                 coCalled.enqueue(new Callback<baseResponse>() {
                     @Override
                     public void onResponse(Call<baseResponse> call, Response<baseResponse> response) {
+                        Log.d("respon ",response.message().toString());
                         if (response.isSuccessful()) {
                             Intent intent = new Intent(LoginActivity.this, ForgetPasswordActivity.class);
                             startActivity(intent);
