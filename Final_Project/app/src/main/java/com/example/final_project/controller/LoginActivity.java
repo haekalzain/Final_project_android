@@ -68,7 +68,7 @@ public class LoginActivity extends AppCompatActivity {
                     public void onResponse(Call<BaseResponse> call, Response<BaseResponse> response) {
                         Log.d("respon ",response.message().toString());
                         if (response.isSuccessful()) {
-                            Intent intent = new Intent(LoginActivity.this, ForgetPasswordActivity.class);
+                            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                             startActivity(intent);
                         } else {
                             Toast.makeText(getApplicationContext(), response.message(), Toast.LENGTH_LONG).show();
