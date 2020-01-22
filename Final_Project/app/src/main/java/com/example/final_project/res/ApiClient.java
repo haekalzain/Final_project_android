@@ -1,4 +1,6 @@
-package com.example.final_project.rest;
+package com.example.final_project.res;
+
+import android.content.Context;
 
 import androidx.annotation.NonNull;
 
@@ -12,12 +14,10 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiClient {
-
-    public static final String BASE_URL="http://54.254.180.214:9803";
+    public static final String BASE_URL = "http://192.168.30.94:3000";
     public static String API_KEY = "xxx123";
     private static Retrofit retrofit = null;
-
-    public static Retrofit getClient(){
+    public static Retrofit getClient() {
 
         if (retrofit==null) {
             OkHttpClient client = new OkHttpClient().newBuilder().addInterceptor(new Interceptor() {
@@ -25,7 +25,7 @@ public class ApiClient {
                 public Response intercept(@NonNull Interceptor.Chain chain) throws IOException {
                     Request request = chain.request()
                             .newBuilder()
-                            .addHeader("token", API_KEY)
+                            .addHeader("Content-Type", "application/json")
                             .build();
                     return chain.proceed(request);
                 }
