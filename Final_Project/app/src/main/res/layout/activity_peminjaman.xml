@@ -6,13 +6,26 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".controller.PeminjamanActivity"
     android:orientation="vertical"
-    android:layout_weight="5">
+    android:layout_weight="9"
+    android:background="@drawable/header">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        >
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:drawableLeft="@drawable/back"
+            android:text="Kembali"
+            android:textColor="@color/colorWhite"
+            android:background="@android:color/transparent"/>
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:background="@drawable/latar2">
+        android:layout_weight="1.5">
         <LinearLayout
 
             android:layout_width="0dp"
@@ -126,11 +139,12 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="4">
+        android:layout_weight="7">
         <FrameLayout
             android:id="@+id/framepeminjaman"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:background="@color/colorWhite"/>
     </LinearLayout>
 
 
