@@ -12,7 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.example.final_project.R;
-import com.example.final_project.model.baseResponse;
+import com.example.final_project.model.BaseResponse;
 import com.example.final_project.res.ApiClient;
 import com.example.final_project.res.ApiInterface;
 import com.google.gson.JsonObject;
@@ -61,11 +61,11 @@ public class LoginActivity extends AppCompatActivity {
                 JsonObject json = new JsonObject();
                 json.addProperty("username", username.getText().toString());
                 json.addProperty("password", password.getText().toString());
-                Call<baseResponse> coCalled = mApiInterface.postCo(json);
+                Call<BaseResponse> coCalled = mApiInterface.postCo(json);
 
-                coCalled.enqueue(new Callback<baseResponse>() {
+                coCalled.enqueue(new Callback<BaseResponse>() {
                     @Override
-                    public void onResponse(Call<baseResponse> call, Response<baseResponse> response) {
+                    public void onResponse(Call<BaseResponse> call, Response<BaseResponse> response) {
                         Log.d("respon ",response.message().toString());
                         if (response.isSuccessful()) {
                             Intent intent = new Intent(LoginActivity.this, ForgetPasswordActivity.class);
@@ -76,7 +76,7 @@ public class LoginActivity extends AppCompatActivity {
                     }
 
                     @Override
-                    public void onFailure(Call<baseResponse> call, Throwable t) {
+                    public void onFailure(Call<BaseResponse> call, Throwable t) {
                         Toast.makeText(getApplicationContext(), toString(), Toast.LENGTH_LONG).show();
                     }
                 });
