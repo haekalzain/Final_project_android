@@ -3,17 +3,18 @@ package com.example.final_project.controller;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.graphics.Color;
+
 import android.os.Bundle;
 import android.view.View;
+
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.final_project.R;
-import com.example.final_project.fragment.DaftarNasabahFragment;
+
 import com.example.final_project.fragment.DaftarPeminjamanFragment;
-import com.example.final_project.fragment.ListNasabahFragment;
+
 import com.example.final_project.fragment.ListPeminjamanFragment;
 
 public class PeminjamanActivity extends AppCompatActivity {
@@ -31,7 +32,6 @@ public class PeminjamanActivity extends AppCompatActivity {
     }
 
      void initAction() {
-
          lldatapeminjaman.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View v) {
@@ -62,5 +62,6 @@ public class PeminjamanActivity extends AppCompatActivity {
         daftarpeminjaman=findViewById(R.id.daftarpeminjaman);
         efekdatapeminjaman=findViewById(R.id.efekdatapeminjaman);
         efekdaftarpeminjaman=findViewById(R.id.efekdaftarpeminjaman);
+
     }
 }
