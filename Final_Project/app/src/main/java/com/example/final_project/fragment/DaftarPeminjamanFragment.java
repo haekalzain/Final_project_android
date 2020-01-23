@@ -23,8 +23,9 @@ public class DaftarPeminjamanFragment extends Fragment {
 
 Button datepicker;
 TextView cektanggal;
+View inflatedView = null;
 
-String hello,dunia;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,16 +36,22 @@ String hello,dunia;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-         view = inflater.inflate(R.layout.fragment_daftar_peminjaman, container, false);
-
-
-
-
+        View view = inflater.inflate(R.layout.fragment_daftar_peminjaman, container, false);
+        datepicker = (Button) view.findViewById(R.id.datepicker);
+        cektanggal = (TextView) view.findViewById(R.id.cektanggal);
+        datepicker.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                Toast.makeText(getActivity(), "This is my Toast message!",
+//                        Toast.LENGTH_LONG).show();
+                DialogFragment newFragment = new SelectDateFragment();
+                newFragment.show(getFragmentManager(), "DatePicker");
+            }
+        });
 
         // Inflate the layout for this fragment
         return view;
     }
-
 
 
 }
