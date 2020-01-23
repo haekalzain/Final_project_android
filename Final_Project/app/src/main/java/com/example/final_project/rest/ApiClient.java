@@ -1,6 +1,4 @@
-package com.example.final_project.res;
-
-import android.content.Context;
+package com.example.final_project.rest;
 
 import androidx.annotation.NonNull;
 

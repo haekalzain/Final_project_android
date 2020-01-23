@@ -13,11 +13,9 @@ import android.widget.Toast;
 
 import com.example.final_project.R;
 import com.example.final_project.model.BaseResponse;
-import com.example.final_project.res.ApiClient;
-import com.example.final_project.res.ApiInterface;
+import com.example.final_project.rest.ApiClient;
+import com.example.final_project.rest.ApiInterface;
 import com.google.gson.JsonObject;
-
-import java.util.logging.Logger;
 
 import retrofit2.Call;
 import retrofit2.Callback;

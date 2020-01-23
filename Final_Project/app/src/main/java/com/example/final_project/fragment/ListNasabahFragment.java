@@ -1,7 +1,6 @@
 package com.example.final_project.fragment;
 
-import android.content.Context;
-import android.net.Uri;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -12,15 +11,17 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.final_project.R;
 import com.example.final_project.adapter.NasabahAdapter;
+import com.example.final_project.controller.DetailNasabahActivity;
 import com.example.final_project.model.GetListNasabah;
 import com.example.final_project.model.Nasabah;
-import com.example.final_project.res.ApiClient;
-import com.example.final_project.res.ApiInterface;
+import com.example.final_project.rest.ApiClient;
+import com.example.final_project.rest.ApiInterface;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -82,6 +83,17 @@ public class ListNasabahFragment extends Fragment {
                     listNasabah.clear();
                     listNasabah.addAll(listNasabahTemp);
                     nasabahAdapter.notifyDataSetChanged();
+                    nasabahListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            Intent intent = new Intent(getActivity(), DetailNasabahActivity.class);
+                            Bundle bundle = new Bundle();
+                            bundle.putString("id", listNasabah.get(position).getId());
+                            intent.putExtras(bundle);
+                            startActivity(intent);
+
+                        }
+                    });
                 }
                 else{
                     Toast.makeText(getActivity().getApplicationContext(),response.message(),Toast.LENGTH_LONG).show();

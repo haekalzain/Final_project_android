@@ -1,14 +1,11 @@
 package com.example.final_project.fragment;
 
-import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -16,18 +13,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.final_project.R;
-import com.example.final_project.controller.DetailNasabahActivity;
-import com.example.final_project.controller.MainActivity;
 import com.example.final_project.controller.NasabahActivity;
-import com.example.final_project.controller.PeminjamanActivity;
 import com.example.final_project.model.GetAndPostNasabah;
-import com.example.final_project.res.ApiClient;
-import com.example.final_project.res.ApiInterface;
+import com.example.final_project.rest.ApiClient;
+import com.example.final_project.rest.ApiInterface;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.gson.JsonObject;
 

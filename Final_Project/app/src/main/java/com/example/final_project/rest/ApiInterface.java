@@ -1,4 +1,4 @@
-package com.example.final_project.res;
+package com.example.final_project.rest;
 
 import com.example.final_project.model.BaseResponse;
 import com.example.final_project.model.GetAndPostNasabah;
