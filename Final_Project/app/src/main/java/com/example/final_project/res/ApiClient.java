@@ -15,7 +15,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiClient {
     public static final String BASE_URL = "http://192.168.30.94:3000";
-    public static String API_KEY = "xxx123";
+    public static String API_KEY = "xx123";
     private static Retrofit retrofit = null;
     public static Retrofit getClient() {
 
@@ -25,7 +25,7 @@ public class ApiClient {
                 public Response intercept(@NonNull Interceptor.Chain chain) throws IOException {
                     Request request = chain.request()
                             .newBuilder()
-                            .addHeader("Content-Type", "application/json")
+                            .addHeader("token", API_KEY)
                             .build();
                     return chain.proceed(request);
                 }
