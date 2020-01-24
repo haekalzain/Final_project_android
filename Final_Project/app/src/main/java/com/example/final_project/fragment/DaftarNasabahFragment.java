@@ -52,14 +52,14 @@ public class DaftarNasabahFragment extends Fragment {
 
         findViewById(view);
         initData();
-        postNasabah();
+        onClick();
     }
 
     private void initData() {
         mApiInterface= ApiClient.getClient().create(ApiInterface.class);
     }
 
-    void postNasabah() {
+    void onClick() {
         btnregistnasabah.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

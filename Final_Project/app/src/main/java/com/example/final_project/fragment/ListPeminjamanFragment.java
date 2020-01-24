@@ -31,6 +31,7 @@ public class ListPeminjamanFragment extends Fragment {
 
     }
 
+
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -47,6 +48,7 @@ public class ListPeminjamanFragment extends Fragment {
     }
 
     void findViewById(View view) {
+
     }
 
     @Override
