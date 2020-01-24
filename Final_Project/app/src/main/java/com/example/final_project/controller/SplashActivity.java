@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 
 import com.example.final_project.R;
+import com.example.final_project.model.Nasabah;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -17,7 +18,7 @@ public class SplashActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent= new Intent(SplashActivity.this,LoginActivity.class);
+                Intent intent= new Intent(SplashActivity.this, PeminjamanActivity.class);
                 startActivity(intent);
             }
         },2000);

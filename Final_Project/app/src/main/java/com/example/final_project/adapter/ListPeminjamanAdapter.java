@@ -5,18 +5,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.TextView;
 
 import com.example.final_project.R;
+import com.example.final_project.model.AkunPeminjaman;
 import com.example.final_project.model.Nasabah;
 
 import java.util.List;
 
-public class NasabahAdapter extends BaseAdapter {
+public class ListPeminjamanAdapter extends BaseAdapter {
     Context context;
-    private List<Nasabah> list;
+    private List<AkunPeminjaman> list;
 
-    public NasabahAdapter(Context context,List<Nasabah> list){
+    public ListPeminjamanAdapter (Context context,List<AkunPeminjaman> list){
         this.context=context;
         this.list=list;
     }
@@ -40,15 +40,8 @@ public class NasabahAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         if(convertView==null){
             LayoutInflater inflater=LayoutInflater.from(this.context);
-            convertView=inflater.inflate(R.layout.item_nasabah,null);
+            convertView=inflater.inflate(R.layout.item_peminjaman,null);
         }
-        Nasabah nasabah = list.get(position);
-        TextView email =(TextView) convertView.findViewById(R.id.email);
-        TextView nama = (TextView)convertView.findViewById(R.id.nama);
-
-
-        email.setText(nasabah.getEmail());
-        nama.setText(nasabah.getName());
         return convertView;
     }
 }

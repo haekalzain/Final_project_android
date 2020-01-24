@@ -3,10 +3,8 @@ package com.example.final_project.controller;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -17,9 +15,12 @@ import com.example.final_project.fragment.ListNasabahFragment;
 
 public class NasabahActivity extends AppCompatActivity {
     FrameLayout framenasabah;
-    FragmentTransaction fm;
+    public FragmentTransaction fm;
+
     LinearLayout lldatanasabah,lldaftarnasabah,efekdatanasabah,efekdaftarnasabah;
     TextView datanasabah,daftarnasabah;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,12 +29,15 @@ public class NasabahActivity extends AppCompatActivity {
 //        WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_nasabah);
         findViewById();
+
         initAction();
         lldatanasabah.callOnClick();
 
     }
 
-     void initAction() {
+
+
+    void initAction() {
     lldatanasabah.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -42,6 +46,10 @@ public class NasabahActivity extends AppCompatActivity {
             fm.commit();
             efekdatanasabah.setVisibility(View.VISIBLE);
             efekdaftarnasabah.setVisibility(View.GONE);
+
+
+
+
 
         }
     });
@@ -65,5 +73,8 @@ public class NasabahActivity extends AppCompatActivity {
         daftarnasabah=findViewById(R.id.daftarnasabah);
         efekdaftarnasabah=findViewById(R.id.efekdaftarnasabah);
         efekdatanasabah=findViewById(R.id.efekdatanasabah);
+
+
+
     }
 }

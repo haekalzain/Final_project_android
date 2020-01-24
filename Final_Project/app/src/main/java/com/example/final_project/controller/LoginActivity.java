@@ -1,8 +1,6 @@
 package com.example.final_project.controller;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Base64;
@@ -17,9 +15,7 @@ import android.widget.Toast;
 import com.auth0.android.jwt.Claim;
 import com.auth0.android.jwt.JWT;
 import com.example.final_project.R;
-import com.example.final_project.model.DataCo;
 import com.example.final_project.model.DataLoginCO;
-import com.example.final_project.res.ApiClient;
 import com.example.final_project.res.ApiInterface;
 import com.example.final_project.util.Preference;
 import com.google.gson.JsonObject;
@@ -35,7 +31,6 @@ public class LoginActivity extends AppCompatActivity {
     Button login;
     LinearLayout forgotPassword;
     EditText username, password;
-    TextView NamaCo;
     ApiInterface mApiInterface;
     Preference preference;
 

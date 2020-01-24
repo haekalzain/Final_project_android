@@ -7,6 +7,7 @@
     tools:context=".fragment.DaftarNasabahFragment"
     android:layout_weight="4"
     android:orientation="vertical"
+    android:id="@+id/fragmentdaftarnasabah"
     >
 
 
@@ -59,6 +60,8 @@
               android:layout_height="0dp"
               android:layout_weight="4">
               <EditText
+                  android:text="haekal3"
+                  android:id="@+id/createnamanasabah"
                   android:layout_width="match_parent"
                   android:layout_height="match_parent"
                   android:hint="Nama"/>
@@ -73,6 +76,8 @@
               android:layout_height="0dp"
               android:layout_weight="4">
               <EditText
+                  android:text="gmail@gmail.com"
+                  android:id="@+id/createemailnasabah"
                   android:layout_width="match_parent"
                   android:layout_height="match_parent"
                   android:hint="Email"/>
@@ -87,6 +92,8 @@
               android:layout_height="0dp"
               android:layout_weight="4">
               <EditText
+                  android:text="82537645276"
+                  android:id="@+id/createnohpnasabah"
                   android:layout_width="match_parent"
                   android:layout_height="match_parent"
                   android:hint="No.Hp"/>
@@ -101,6 +108,8 @@
               android:layout_height="0dp"
               android:layout_weight="4">
               <EditText
+                  android:text="bekasi selatan"
+                  android:id="@+id/createalamatnasabah"
                   android:layout_width="match_parent"
                   android:layout_height="match_parent"
                   android:hint="Alamat"/>
@@ -113,22 +122,21 @@
           <LinearLayout
               android:layout_width="match_parent"
               android:layout_height="0dp"
-              android:layout_weight="4">
-              <EditText
+              android:layout_weight="2">
+              <TextView
+                  android:id="@+id/createnikco"
                   android:layout_width="match_parent"
                   android:layout_height="match_parent"
-                  android:hint="NIK"/>
+                  android:hint="NIK"
+                  android:text="12454390"/>
           </LinearLayout>
-          <LinearLayout
-              android:layout_width="match_parent"
-              android:layout_height="0dp"
-              android:layout_weight="1">
-          </LinearLayout>
+
           <LinearLayout
               android:layout_width="match_parent"
               android:layout_height="0dp"
               android:layout_weight="4">
               <Button
+                  android:id="@+id/btnregistnasabah"
                   android:layout_width="match_parent"
                   android:layout_height="match_parent"
                   android:text="Kirim"
