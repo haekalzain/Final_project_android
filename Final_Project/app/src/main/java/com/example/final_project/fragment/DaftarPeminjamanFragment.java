@@ -50,5 +50,4 @@ TextView cektanggal;
         return view;
     }
 
-
 }

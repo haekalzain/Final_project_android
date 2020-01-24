@@ -2,38 +2,50 @@ package com.example.final_project.controller;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.auth0.android.jwt.Claim;
+import com.auth0.android.jwt.JWT;
 import com.example.final_project.R;
-import com.example.final_project.model.BaseResponse;
+import com.example.final_project.model.DataCo;
+import com.example.final_project.model.DataLoginCO;
 import com.example.final_project.res.ApiClient;
 import com.example.final_project.res.ApiInterface;
+import com.example.final_project.util.Preference;
 import com.google.gson.JsonObject;
 
-import java.util.logging.Logger;
+import java.io.UnsupportedEncodingException;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity {
+
     Button login;
     LinearLayout forgotPassword;
     EditText username, password;
+    TextView NamaCo;
     ApiInterface mApiInterface;
+    Preference preference;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         findViewById();
-        mApiInterface= ApiClient.getClient().create(ApiInterface.class);
+       mApiInterface= ApiClient.getClient(getApplicationContext()).create(ApiInterface.class);
         onClick();
     }
 
@@ -61,27 +73,59 @@ public class LoginActivity extends AppCompatActivity {
                 JsonObject json = new JsonObject();
                 json.addProperty("username", username.getText().toString());
                 json.addProperty("password", password.getText().toString());
-                Call<BaseResponse> coCalled = mApiInterface.postCo(json);
+                Call<DataLoginCO> coCalled = mApiInterface.postCo(json);
 
-                coCalled.enqueue(new Callback<BaseResponse>() {
+                coCalled.enqueue(new Callback<DataLoginCO>() {
                     @Override
-                    public void onResponse(Call<BaseResponse> call, Response<BaseResponse> response) {
-                        Log.d("respon ",response.message().toString());
+                    public void onResponse(Call<DataLoginCO> call, Response<DataLoginCO> response) {
+//                        Log.d("respon ",response.message().toString());
                         if (response.isSuccessful()) {
+                            String JWTEncoded = response.body().getToken();
+                            try {
+                                String[] split = JWTEncoded.split("\\.");
+                                Log.d("JWT_DECODED", "Header: " + getJson(split[0]));
+                                Log.d("JWT_DECODED", "Body: " + getJson(split[1]));
+                            } catch (UnsupportedEncodingException e) {
+                                //Error
+                            }
+                            JWT parsedJWT = new JWT(JWTEncoded);
+                            Claim nameMetaData = parsedJWT.getClaim("name");
+                            String nameValue = nameMetaData.asString();
+
+
+                            Claim nikMetaData = parsedJWT.getClaim("nik");
+                            String nikValue = nikMetaData.asString();
+                            Log.d("hello ",nikValue);
+
+                            preference = new Preference();
+                            preference.setToken(getBaseContext(),JWTEncoded);
+                            preference.setName(getBaseContext(),nameValue);
+                            preference.setNik(getBaseContext(), nikValue);
+
+
+
+
                             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                             startActivity(intent);
+
+
+
                         } else {
                             Toast.makeText(getApplicationContext(), response.message(), Toast.LENGTH_LONG).show();
                         }
                     }
 
                     @Override
-                    public void onFailure(Call<BaseResponse> call, Throwable t) {
+                    public void onFailure(Call<DataLoginCO> call, Throwable t) {
                         Toast.makeText(getApplicationContext(), toString(), Toast.LENGTH_LONG).show();
                     }
                 });
             }
         });
+    }
+    private static String getJson(String strEncoded) throws UnsupportedEncodingException{
+        byte[] decodedBytes = Base64.decode(strEncoded, Base64.URL_SAFE);
+        return new String(decodedBytes, "UTF-8");
     }
 
 }
