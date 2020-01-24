@@ -16,7 +16,8 @@ import com.auth0.android.jwt.Claim;
 import com.auth0.android.jwt.JWT;
 import com.example.final_project.R;
 import com.example.final_project.model.DataLoginCO;
-import com.example.final_project.res.ApiInterface;
+import com.example.final_project.rest.ApiClient;
+import com.example.final_project.rest.ApiInterface;
 import com.example.final_project.util.Preference;
 import com.google.gson.JsonObject;
 

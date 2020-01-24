@@ -51,7 +51,7 @@ ApiInterface mApiInterface;
     }
 
     void initData() {
-        mApiInterface= ApiClient.getClient().create(ApiInterface.class);
+        mApiInterface= ApiClient.getClient(getApplicationContext()).create(ApiInterface.class);
 //         Bundle bundle = getIntent().getExtras();
 //         id = bundle.getString("id");
 //         Toast.makeText(getApplicationContext(), id, Toast.LENGTH_LONG).show();

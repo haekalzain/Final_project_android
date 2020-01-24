@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.auth0.android.jwt.Claim;
 import com.auth0.android.jwt.JWT;
 import com.example.final_project.R;
-import com.example.final_project.res.ApiInterface;
+import com.example.final_project.rest.ApiInterface;
 import com.example.final_project.util.Preference;
 import com.google.gson.JsonObject;
 
@@ -82,7 +82,8 @@ public class MainActivity extends AppCompatActivity {
         Setting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(MainActivity.this, SettingActivity.class);
+                startActivity(intent);
             }
         });
 

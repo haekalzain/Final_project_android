@@ -48,9 +48,6 @@ public class NasabahActivity extends AppCompatActivity {
             efekdaftarnasabah.setVisibility(View.GONE);
 
 
-
-
-
         }
     });
     lldaftarnasabah.setOnClickListener(new View.OnClickListener() {

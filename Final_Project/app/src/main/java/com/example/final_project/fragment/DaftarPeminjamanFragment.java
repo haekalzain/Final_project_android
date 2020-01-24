@@ -57,7 +57,7 @@ public class DaftarPeminjamanFragment extends Fragment {
     }
 
     void initData() {
-        mApiInterface= ApiClient.getClient().create(ApiInterface.class);
+        mApiInterface= ApiClient.getClient(getContext()).create(ApiInterface.class);
     }
 
     void findViewById(View view) {

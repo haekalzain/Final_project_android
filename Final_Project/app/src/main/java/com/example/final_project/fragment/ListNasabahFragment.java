@@ -63,7 +63,7 @@ public class ListNasabahFragment extends Fragment {
         nasabahAdapter = new NasabahAdapter(getActivity().getApplicationContext(),listNasabah);
         nasabahListView.setAdapter(nasabahAdapter);
         nasabahAdapter.notifyDataSetChanged();
-        mApiInterface= ApiClient.getClient().create(ApiInterface.class);
+        mApiInterface= ApiClient.getClient(getContext()).create(ApiInterface.class);
 
     }
 
