@@ -9,6 +9,7 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 
 public interface ApiInterface {
     @POST("users/login")
@@ -17,6 +18,8 @@ public interface ApiInterface {
     @GET("/customers/all")
     Call<GetListNasabah> getListNasabah();
 
-    @POST("/customers/add")
+    @POST("/customers/register")
     Call<GetAndPostNasabah> createNasabah(@Body JsonObject o);
+
+
 }

@@ -83,13 +83,16 @@ public class DaftarNasabahFragment extends Fragment {
                                     response.message(), Snackbar.LENGTH_SHORT).show();
                         }
                         else{
+
+                            Snackbar snackBar = Snackbar.make(getActivity().findViewById(R.id.fragmentdaftarnasabah),
+                                    "Look at me, I'm a fancy snackbar", Snackbar.LENGTH_LONG);
+                            snackBar.show();
+                            Snackbar.make(getActivity().findViewById(R.id.fragmentdaftarnasabah),
+                                    response.message(), Snackbar.LENGTH_SHORT).show();
                             Intent a = new Intent(getActivity(), NasabahActivity.class);
                             startActivity(a);
                             getActivity().finish();
-                            Snackbar.make(getActivity().findViewById(R.id.fragmentdaftarnasabah),
-                                    response.message(), Snackbar.LENGTH_SHORT).show();
                         }
-//                        Toast.makeText(getActivity().getApplicationContext(),response.message(),Toast.LENGTH_LONG).show();
                     }
 
                     @Override

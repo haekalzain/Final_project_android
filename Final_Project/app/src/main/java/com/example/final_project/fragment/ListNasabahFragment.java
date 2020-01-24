@@ -18,6 +18,7 @@ import android.widget.Toast;
 import com.example.final_project.R;
 import com.example.final_project.adapter.NasabahAdapter;
 import com.example.final_project.controller.DetailNasabahActivity;
+import com.example.final_project.controller.NasabahActivity;
 import com.example.final_project.model.GetListNasabah;
 import com.example.final_project.model.Nasabah;
 import com.example.final_project.rest.ApiClient;
@@ -73,24 +74,31 @@ public class ListNasabahFragment extends Fragment {
     }
 
     void getListNasabah() {
-        Call<GetListNasabah> nasabahCall =mApiInterface.getListNasabah();
+        Call<GetListNasabah> nasabahCall = mApiInterface.getListNasabah();
         nasabahCall.enqueue(new Callback<GetListNasabah>() {
             @Override
             public void onResponse(Call<GetListNasabah> call, Response<GetListNasabah> response) {
                 if(response.isSuccessful()){
-                    Log.d("cccc",response.body().getListNasabah().get(0).getName());
-                    List<Nasabah> listNasabahTemp = response.body().getListNasabah();
+                    Toast.makeText(getActivity().getApplicationContext(),response.message(),Toast.LENGTH_LONG).show();
+                    Log.e("cccc",response.body().getListDataNasabah().getListDataNasabah().get(0).getEmail());
+                    List<Nasabah> listNasabahTemp = response.body().getListDataNasabah().getListDataNasabah();
                     listNasabah.clear();
                     listNasabah.addAll(listNasabahTemp);
                     nasabahAdapter.notifyDataSetChanged();
+
                     nasabahListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                            Intent intent = new Intent(getActivity(), DetailNasabahActivity.class);
+                            Intent a = new Intent(getActivity(), DetailNasabahActivity.class);
                             Bundle bundle = new Bundle();
+                            bundle.putString("phone", listNasabah.get(position).getPhone());
+                            bundle.putString("nama", listNasabah.get(position).getName());
+                            bundle.putString("alamat", listNasabah.get(position).getAddress());
                             bundle.putString("id", listNasabah.get(position).getId());
-                            intent.putExtras(bundle);
-                            startActivity(intent);
+                            bundle.putString("email", listNasabah.get(position).getEmail());
+                            a.putExtras(bundle);
+                            startActivity(a);
+                            getActivity();
 
                         }
                     });

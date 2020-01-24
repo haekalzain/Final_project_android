@@ -8,7 +8,6 @@ import android.widget.BaseAdapter;
 
 import com.example.final_project.R;
 import com.example.final_project.model.AkunPeminjaman;
-import com.example.final_project.model.Nasabah;
 
 import java.util.List;
 

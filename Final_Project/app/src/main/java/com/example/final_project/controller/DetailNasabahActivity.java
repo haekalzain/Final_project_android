@@ -12,11 +12,17 @@ import android.widget.Toast;
 
 import com.example.final_project.R;
 import com.example.final_project.fragment.DaftarPeminjamanFragment;
+import com.example.final_project.model.GetAndPostNasabah;
+import com.example.final_project.model.Nasabah;
 import com.example.final_project.rest.ApiClient;
 import com.example.final_project.rest.ApiInterface;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class DetailNasabahActivity extends AppCompatActivity {
-//String id;
+String phone,nama,alamat,id,email;
 TextView idnasabahupdate;
 EditText namanasabahupdate,emailnasabahupdate,alamatnasabahupdate,nomorhpnasabahupdate;
 Button btnupdatenasabah;
@@ -29,12 +35,24 @@ ApiInterface mApiInterface;
         findViewById();
         initData();
         onClick();
+        getDataNasabah();
     }
 
-     void onClick() {
+    void getDataNasabah() {
+        namanasabahupdate.setText(nama);
+        alamatnasabahupdate.setText(alamat);
+        nomorhpnasabahupdate.setText(phone);
+        idnasabahupdate.setText(id);
+        emailnasabahupdate.setText(email);
+    }
+
+
+    void onClick() {
         btnupdatenasabah.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "Button clicked",
+                        Toast.LENGTH_LONG).show();
 
             }
         });
@@ -52,8 +70,12 @@ ApiInterface mApiInterface;
 
     void initData() {
         mApiInterface= ApiClient.getClient().create(ApiInterface.class);
-//         Bundle bundle = getIntent().getExtras();
-//         id = bundle.getString("id");
-//         Toast.makeText(getApplicationContext(), id, Toast.LENGTH_LONG).show();
+         Bundle bundle = getIntent().getExtras();
+         phone = bundle.getString("phone");
+        nama = bundle.getString("nama");
+        alamat = bundle.getString("alamat");
+        id = bundle.getString("id");
+        email = bundle.getString("email");
+
     }
 }
