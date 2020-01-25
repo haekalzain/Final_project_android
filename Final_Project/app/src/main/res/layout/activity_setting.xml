@@ -17,12 +17,12 @@
             android:background="@drawable/latar2">
 
             <LinearLayout
+                android:id="@+id/back"
+                android:orientation="vertical"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.5"
-                android:background="@drawable/back">
-
-            </LinearLayout>
+                android:background="@drawable/back" />
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -46,7 +46,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="DETAIL"
+                        android:text="Data Costomer Officer"
                         android:textStyle="bold"
                         android:textSize="25dp"
                         android:textColor="@color/colorWhite"/>
@@ -142,7 +142,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="EDIT PROFIL"
+                android:text="Ubah Data Coustomer Office"
                 android:textSize="20dp"
                 android:textColor="@color/colorWhite"/>
         </LinearLayout>
@@ -175,16 +175,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:text="Email Coustomer Office"
+                android:text="NIK Comunity Office"
                 android:textSize="25dp"
                 android:textStyle="bold"/>
 
             <EditText
-                android:id="@+id/emailCoTxt"
+                android:id="@+id/NikCoTxt"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:text="EMAIL CO"/>
+                android:text="NIK CO"
+                android:enabled="false"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -195,7 +196,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:text="Nama Coustomer Office"
+                android:text="Nama Comunity Office"
                 android:textSize="25dp"
                 android:textStyle="bold"/>
 
@@ -204,7 +205,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:text="nama CO"/>
+                android:hint="nama CO"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -215,12 +216,27 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:text="Alamat Coustomer Office"
+                android:text="Alamat Comunity Office"
                 android:textSize="25dp"
                 android:textStyle="bold"/>
 
             <EditText
                 android:id="@+id/addressCoTxt"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="Alamat CO"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="Email Comunity Office"
+                android:textSize="25dp"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:id="@+id/emailCoTxt"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"

@@ -50,7 +50,7 @@
                         android:id="@+id/hallotxt"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="HELLO"
+                        android:text="Hai"
                         android:textAlignment="center"
                         android:textSize="25dp"
                         android:textColor="@color/colorWhite"
@@ -234,7 +234,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="Finance"
+                        android:text="Peminjaman"
                         android:textStyle="bold"
                         android:textSize="18dp"
                         android:textAlignment="center"/>
@@ -311,7 +311,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="Payment"
+                        android:text="Pembayaran"
                         android:textStyle="bold"
                         android:textSize="18dp"
                         android:textAlignment="center"/>
@@ -332,7 +332,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="Setting"
+                        android:text="Pengaturan"
                         android:textStyle="bold"
                         android:textSize="18dp"
                         android:textAlignment="center"/>
