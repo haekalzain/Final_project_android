@@ -57,7 +57,7 @@ public class DaftarPeminjamanFragment extends Fragment {
     }
 
     void initData() {
-        mApiInterface= ApiClient.getClient().create(ApiInterface.class);
+        mApiInterface= ApiClient.getClient(getContext()).create(ApiInterface.class);
     }
 
     void findViewById(View view) {
@@ -75,6 +75,4 @@ public class DaftarPeminjamanFragment extends Fragment {
                              Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_daftar_peminjaman, container, false);
     }
-
-
 }

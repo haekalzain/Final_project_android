@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.5"
+        android:background="@drawable/latar2"
         >
         <Button
             android:layout_width="wrap_content"
@@ -25,19 +26,12 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1.5">
+        android:layout_weight="0.4">
         <LinearLayout
-
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="2"
+            android:layout_weight="1"
             android:orientation="vertical">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="3">
-
-            </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -51,7 +45,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="3"
+                        android:layout_weight="2.5"
                         android:orientation="horizontal">
                         <TextView
                             android:id="@+id/datapembayaran"
@@ -69,32 +63,27 @@
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:layout_weight="1.5"
                         android:background="@color/colorGrey"
                         />
                 </LinearLayout>
+
             </LinearLayout>
-        </LinearLayout>
 
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.15">
+            android:layout_weight="0.05">
 
         </LinearLayout>
-
-
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="2"
+            android:layout_weight="1"
             android:orientation="vertical">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="3">
-            </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -108,14 +97,14 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="3"
+                        android:layout_weight="2.5"
                         android:orientation="horizontal">
                         <TextView
                             android:id="@+id/daftarpembayaran"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:gravity="bottom|center_horizontal"
-                            android:text="Form Daftar Peminjaman"
+                            android:text="Daftar Pembayaran"
                             android:textColor="#fff"
                             android:textStyle="bold"
                             android:textAlignment="center"
@@ -126,12 +115,10 @@
                         android:id="@+id/efekdaftarpembayaran"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:layout_weight="1.5"
                         android:background="@color/colorGrey">
                     </LinearLayout>
-
                 </LinearLayout>
-
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

@@ -59,7 +59,7 @@ public class DaftarNasabahFragment extends Fragment {
     }
 
     private void initData() {
-        mApiInterface= ApiClient.getClient().create(ApiInterface.class);
+        mApiInterface= ApiClient.getClient(getContext()).create(ApiInterface.class);
     }
 
     void onClick() {

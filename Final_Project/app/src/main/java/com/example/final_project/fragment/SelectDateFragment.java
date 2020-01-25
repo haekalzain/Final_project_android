@@ -30,7 +30,10 @@ public class SelectDateFragment extends DialogFragment  implements DatePickerDia
         int yy = calendar.get(Calendar.YEAR);
         int mm = calendar.get(Calendar.MONTH);
         int dd = calendar.get(Calendar.DAY_OF_MONTH);
-        return new DatePickerDialog(getActivity(), this, yy, mm, dd);
+        DatePickerDialog dpd = new DatePickerDialog(getActivity(),this,yy, mm, dd);
+        DatePicker dp = dpd.getDatePicker();
+        dp.setMinDate(calendar.getTimeInMillis()+86400000);
+        return  dpd;
     }
 
     public void onDateSet(DatePicker view, int yy, int mm, int dd) {

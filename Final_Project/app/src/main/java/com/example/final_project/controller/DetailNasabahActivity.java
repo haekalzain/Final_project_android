@@ -22,11 +22,11 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class DetailNasabahActivity extends AppCompatActivity {
-String phone,nama,alamat,id,email;
-TextView idnasabahupdate;
-EditText namanasabahupdate,emailnasabahupdate,alamatnasabahupdate,nomorhpnasabahupdate;
-Button btnupdatenasabah;
-ApiInterface mApiInterface;
+    String phone,nama,alamat,id,email;
+    TextView idnasabahupdate;
+    EditText namanasabahupdate,emailnasabahupdate,alamatnasabahupdate,nomorhpnasabahupdate;
+    Button btnupdatenasabah;
+    ApiInterface mApiInterface;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,13 +66,13 @@ ApiInterface mApiInterface;
     }
 
     void initData() {
-        mApiInterface= ApiClient.getClient().create(ApiInterface.class);
-         Bundle bundle = getIntent().getExtras();
-         phone = bundle.getString("phone");
-         nama = bundle.getString("nama");
-         alamat = bundle.getString("alamat");
-         id = bundle.getString("id");
-         email = bundle.getString("email");
+        mApiInterface= ApiClient.getClient(getApplicationContext()).create(ApiInterface.class);
+        Bundle bundle = getIntent().getExtras();
+        phone = bundle.getString("phone");
+        nama = bundle.getString("nama");
+        alamat = bundle.getString("alamat");
+        id = bundle.getString("id");
+        email = bundle.getString("email");
 
     }
 }

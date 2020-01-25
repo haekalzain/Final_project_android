@@ -238,6 +238,7 @@
                         android:layout_height="match_parent"
                         android:textSize="25dp"
                         android:hint="Kata Sandi"
+                        android:inputType="textPassword"
                         android:background="@null">
 
                     </EditText>
