@@ -42,10 +42,8 @@ ApiInterface mApiInterface;
         namanasabahupdate.setText(nama);
         alamatnasabahupdate.setText(alamat);
         nomorhpnasabahupdate.setText(phone);
-        idnasabahupdate.setText(id);
         emailnasabahupdate.setText(email);
     }
-
 
     void onClick() {
         btnupdatenasabah.setOnClickListener(new View.OnClickListener() {
@@ -64,7 +62,6 @@ ApiInterface mApiInterface;
         namanasabahupdate=findViewById(R.id.namanasabahupdate);
         nomorhpnasabahupdate=findViewById(R.id.nomorhpnasabahupdate);
         alamatnasabahupdate=findViewById(R.id.alamatnasabahupdate);
-        idnasabahupdate=findViewById(R.id.idnasabahupdate);
 
     }
 
@@ -72,10 +69,10 @@ ApiInterface mApiInterface;
         mApiInterface= ApiClient.getClient().create(ApiInterface.class);
          Bundle bundle = getIntent().getExtras();
          phone = bundle.getString("phone");
-        nama = bundle.getString("nama");
-        alamat = bundle.getString("alamat");
-        id = bundle.getString("id");
-        email = bundle.getString("email");
+         nama = bundle.getString("nama");
+         alamat = bundle.getString("alamat");
+         id = bundle.getString("id");
+         email = bundle.getString("email");
 
     }
 }

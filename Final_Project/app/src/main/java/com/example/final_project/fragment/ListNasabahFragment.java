@@ -80,8 +80,9 @@ public class ListNasabahFragment extends Fragment {
             public void onResponse(Call<GetListNasabah> call, Response<GetListNasabah> response) {
                 if(response.isSuccessful()){
                     Toast.makeText(getActivity().getApplicationContext(),response.message(),Toast.LENGTH_LONG).show();
-                    Log.e("cccc",response.body().getListDataNasabah().getListDataNasabah().get(0).getEmail());
-                    List<Nasabah> listNasabahTemp = response.body().getListDataNasabah().getListDataNasabah();
+//                    Log.e("cccc",response.body().getListDataNasabah().getListDataNasabah().get(0).getEmail());
+                    Log.e("cccc",response.body().getListNasabah().get(0).getName());
+                    List<Nasabah> listNasabahTemp = response.body().getListNasabah();
                     listNasabah.clear();
                     listNasabah.addAll(listNasabahTemp);
                     nasabahAdapter.notifyDataSetChanged();

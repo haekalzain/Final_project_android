@@ -13,7 +13,7 @@ public class GetListNasabah {
     @SerializedName("message")
     String message;
     @SerializedName("data")
-    DataNasabah listDataNasabah;
+    List<Nasabah> listNasabah;
 
     public Integer getCode() {
         return code;
@@ -39,12 +39,11 @@ public class GetListNasabah {
         this.message = message;
     }
 
-
-    public DataNasabah getListDataNasabah() {
-        return listDataNasabah;
+    public List<Nasabah> getListNasabah() {
+        return listNasabah;
     }
 
-    public void setListDataNasabah(DataNasabah listDataNasabah) {
-        this.listDataNasabah = listDataNasabah;
+    public void setListNasabah(List<Nasabah> listNasabah) {
+        this.listNasabah = listNasabah;
     }
 }

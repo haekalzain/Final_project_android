@@ -15,7 +15,7 @@ public interface ApiInterface {
     @POST("users/login")
     Call<BaseResponse> postCo(@Body JsonObject O);
 
-    @GET("/customers/all")
+    @GET("/customers/67")
     Call<GetListNasabah> getListNasabah();
 
     @POST("/customers/register")
