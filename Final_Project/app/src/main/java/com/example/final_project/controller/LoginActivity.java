@@ -41,7 +41,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         findViewById();
-       mApiInterface= ApiClient.getClient(getApplicationContext()).create(ApiInterface.class);
+        mApiInterface= ApiClient.getClient(getApplicationContext()).create(ApiInterface.class);
         onClick();
     }
 
@@ -57,7 +57,7 @@ public class LoginActivity extends AppCompatActivity {
         forgotPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            Intent intent = new Intent( LoginActivity.this, ForgetPasswordActivity.class);
+                Intent intent = new Intent( LoginActivity.this, ForgetPasswordActivity.class);
                 startActivity(intent);
             }
         });
@@ -97,8 +97,6 @@ public class LoginActivity extends AppCompatActivity {
                             preference.setToken(getBaseContext(),JWTEncoded);
                             preference.setName(getBaseContext(),nameValue);
                             preference.setNik(getBaseContext(), nikValue);
-
-
 
 
                             Intent intent = new Intent(LoginActivity.this, MainActivity.class);

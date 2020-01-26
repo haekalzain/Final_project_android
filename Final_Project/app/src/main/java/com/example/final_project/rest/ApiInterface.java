@@ -1,10 +1,14 @@
 package com.example.final_project.rest;
 
 import com.example.final_project.model.BaseResponse;
+import com.example.final_project.model.DataCo;
 import com.example.final_project.model.DataLoginCO;
 import com.example.final_project.model.GetAkunNasabah;
 import com.example.final_project.model.GetAndPostNasabah;
 import com.example.final_project.model.GetListNasabah;
+
+import com.example.final_project.model.ResponCo;
+
 import com.example.final_project.model.Pembayaran;
 import com.example.final_project.model.ResponMiddleware;
 import com.google.gson.JsonObject;
@@ -25,6 +29,13 @@ public interface ApiInterface {
 
     @POST("/customers/register")
     Call<GetAndPostNasabah> createNasabah(@Body JsonObject o);
+
+    @GET("employee/{nik}")
+    Call<ResponCo> getCo(@Path("nik") String Nik);
+
+    @PUT("employee/edit/{nik}")
+    Call<ResponCo> putCo(@Path("nik") String Nik,
+                                  @Body JsonObject O);
 
     @PUT("/financing-report/pay/{trxId}")
     Call<Pembayaran> putbayar(@Path("trxId") String trxId,
