@@ -11,6 +11,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.final_project.R;
 import com.example.final_project.model.DataCo;
+import com.example.final_project.model.Pembayaran;
 import com.example.final_project.model.ResponCo;
 import com.example.final_project.rest.ApiClient;
 import com.example.final_project.rest.ApiInterface;
@@ -107,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
         Finance.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, PembayaranActivity.class);
+                Intent intent = new Intent(MainActivity.this, PeminjamanActivity.class);
                 startActivity(intent);
             }
         });
@@ -115,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
         Payment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, PeminjamanActivity.class);
+                Intent intent = new Intent(MainActivity.this, PembayaranActivity.class);
                 startActivity(intent);
             }
         });

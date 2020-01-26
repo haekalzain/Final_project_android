@@ -3,6 +3,7 @@ package com.example.final_project.controller;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -19,7 +20,7 @@ import com.example.final_project.fragment.ListPeminjamanFragment;
 public class PembayaranActivity extends AppCompatActivity {
     FrameLayout framepembayaran;
     FragmentTransaction fm;
-    LinearLayout lldatapembayaran,lldaftarpembayaran,efekdatapembayaran,efekdaftarpembayaran;
+    LinearLayout lldatapembayaran,lldaftarpembayaran,efekdatapembayaran,efekdaftarpembayaran,back;
     TextView datapembayaran,daftarpembayaran;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +54,15 @@ public class PembayaranActivity extends AppCompatActivity {
 
              }
          });
+
+         back.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+                 Intent intent = new Intent(PembayaranActivity.this, MainActivity.class);
+                 startActivity(intent);
+             }
+         });
+
     }
     void findViewById() {
         framepembayaran=findViewById(R.id.framepembayaran);
@@ -62,5 +72,6 @@ public class PembayaranActivity extends AppCompatActivity {
         daftarpembayaran=findViewById(R.id.daftarpembayaran);
         efekdatapembayaran=findViewById(R.id.efekdatapembayaran);
         efekdaftarpembayaran=findViewById(R.id.efekdaftarpembayaran);
+        back = findViewById(R.id.back);
     }
 }

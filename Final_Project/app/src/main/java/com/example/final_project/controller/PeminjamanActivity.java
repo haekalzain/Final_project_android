@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -20,7 +21,7 @@ import com.example.final_project.fragment.ListPeminjamanFragment;
 public class PeminjamanActivity extends AppCompatActivity {
     FrameLayout framepeminjaman;
     FragmentTransaction fm;
-    LinearLayout lldatapeminjaman,lldaftarpeminjaman,efekdatapeminjaman,efekdaftarpeminjaman;
+    LinearLayout lldatapeminjaman,lldaftarpeminjaman,efekdatapeminjaman,efekdaftarpeminjaman,back;
     TextView datapeminjaman,daftarpeminjaman;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +53,15 @@ public class PeminjamanActivity extends AppCompatActivity {
                  efekdatapeminjaman.setVisibility(View.GONE);
              }
          });
+
+         back.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+                 Intent intent = new Intent(PeminjamanActivity.this, MainActivity.class);
+                 startActivity(intent);
+             }
+         });
+
     }
 
     void findViewById() {
@@ -62,6 +72,7 @@ public class PeminjamanActivity extends AppCompatActivity {
         daftarpeminjaman=findViewById(R.id.daftarpeminjaman);
         efekdatapeminjaman=findViewById(R.id.efekdatapeminjaman);
         efekdaftarpeminjaman=findViewById(R.id.efekdaftarpeminjaman);
+        back=findViewById(R.id.back);
 
     }
 }

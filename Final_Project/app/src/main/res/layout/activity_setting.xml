@@ -46,7 +46,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="Data Costomer Officer"
+                        android:text="Data Community Officer"
                         android:textStyle="bold"
                         android:textSize="25dp"
                         android:textColor="@color/colorWhite"/>
@@ -65,7 +65,7 @@
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1.2">
+                android:layout_weight="1.18">
             </LinearLayout>
 
             <LinearLayout
@@ -142,7 +142,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Ubah Data Coustomer Office"
+                android:text="Ubah Data Community Office"
                 android:textSize="20dp"
                 android:textColor="@color/colorWhite"/>
         </LinearLayout>
@@ -175,7 +175,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:text="NIK Comunity Office"
+                android:text="NIK Community Office"
                 android:textSize="25dp"
                 android:textStyle="bold"/>
 
@@ -187,16 +187,13 @@
                 android:text="NIK CO"
                 android:enabled="false"/>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="0.5"/>
+
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:text="Nama Comunity Office"
+                android:text="Nama Community Office"
                 android:textSize="25dp"
                 android:textStyle="bold"/>
 
@@ -207,16 +204,13 @@
                 android:layout_weight="1"
                 android:hint="nama CO"/>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="0.5"/>
+
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:text="Alamat Comunity Office"
+                android:text="Alamat Community Office"
                 android:textSize="25dp"
                 android:textStyle="bold"/>
 
@@ -231,7 +225,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:text="Email Comunity Office"
+                android:text="Email Community Office"
                 android:textSize="25dp"
                 android:textStyle="bold"/>
 
@@ -240,7 +234,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:text="Alamat CO"/>
+                android:text="Email CO"/>
 
 
 

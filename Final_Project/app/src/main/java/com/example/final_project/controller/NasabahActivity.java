@@ -3,6 +3,7 @@ package com.example.final_project.controller;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -17,7 +18,7 @@ public class NasabahActivity extends AppCompatActivity {
     FrameLayout framenasabah;
     public FragmentTransaction fm;
 
-    LinearLayout lldatanasabah,lldaftarnasabah,efekdatanasabah,efekdaftarnasabah;
+    LinearLayout lldatanasabah,lldaftarnasabah,efekdatanasabah,efekdaftarnasabah,back;
     TextView datanasabah,daftarnasabah;
 
 
@@ -60,6 +61,15 @@ public class NasabahActivity extends AppCompatActivity {
             efekdatanasabah.setVisibility(View.GONE);
         }
     });
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(NasabahActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     void findViewById() {
@@ -70,6 +80,7 @@ public class NasabahActivity extends AppCompatActivity {
         daftarnasabah=findViewById(R.id.daftarnasabah);
         efekdaftarnasabah=findViewById(R.id.efekdaftarnasabah);
         efekdatanasabah=findViewById(R.id.efekdatanasabah);
+        back=findViewById(R.id.back);
 
 
 
