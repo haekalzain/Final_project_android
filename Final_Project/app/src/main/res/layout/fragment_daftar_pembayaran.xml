@@ -7,7 +7,8 @@
     tools:context=".fragment.DaftarNasabahFragment"
     android:layout_weight="4"
     android:orientation="vertical"
-    android:background="@color/colorOrange">
+    android:id="@+id/fragmentdaftarnasabah"
+    >
 
 
     <LinearLayout
@@ -49,15 +50,51 @@
                     android:layout_height="match_parent"
                     android:src="@drawable/logo"/>
             </LinearLayout>
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1">
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="4">
                 <EditText
+                    android:id="@+id/namanasabahbayar"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:hint=" Kode Pembayaran"/>
+                    android:hint="Nama Nasabah"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="4">
+                <TextView
+                    android:id="@+id/nikcobayar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Nik Co"
+                    app:autoSizeTextType="uniform"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="4">
+                <EditText
+                    android:id="@+id/kodebayar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="Kode Pembayaran"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -65,11 +102,13 @@
                 android:layout_weight="1">
             </LinearLayout>
 
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1">
+                android:layout_weight="4">
                 <Button
+                    android:id="@+id/btnpembayaran"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="Kirim"
@@ -92,7 +131,6 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.25"/>
-
     </LinearLayout>
 
     <LinearLayout

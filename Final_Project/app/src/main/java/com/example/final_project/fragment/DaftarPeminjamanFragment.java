@@ -8,6 +8,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,13 +21,17 @@ import android.widget.Toast;
 import com.example.final_project.R;
 import com.example.final_project.rest.ApiClient;
 import com.example.final_project.rest.ApiInterface;
+import com.example.final_project.util.Preference;
+import com.google.gson.JsonObject;
+
+import java.math.BigDecimal;
 
 
 public class DaftarPeminjamanFragment extends Fragment {
     ApiInterface mApiInterface;
     Button datepicker,btndaftarpeminjaman;
-    TextView cektanggal;
-    EditText editjumlahpeminjaman,idcopeminjaman,idnasabahpeminjaman;
+    TextView cektanggal,idcopeminjaman;
+    EditText editjumlahpeminjaman,idnasabahpeminjaman;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +56,14 @@ public class DaftarPeminjamanFragment extends Fragment {
          btndaftarpeminjaman.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View v) {
+                 BigDecimal bd=new BigDecimal(editjumlahpeminjaman.getText().toString());
+                 JsonObject o= new JsonObject();
+                 o.addProperty("plafon",bd);
+                 o.addProperty("tes",cektanggal.getText().toString());
+                 o.addProperty("tes2",idnasabahpeminjaman.getText().toString());
+                 Log.e("gggg",o.toString());
+
+
 
              }
          });
@@ -64,7 +77,6 @@ public class DaftarPeminjamanFragment extends Fragment {
         datepicker = (Button) view.findViewById(R.id.datepicker);
         cektanggal = (TextView) view.findViewById(R.id.cektanggal);
         editjumlahpeminjaman= (EditText) view.findViewById(R.id.editjumlahpeminjaman);
-        idcopeminjaman= (EditText) view.findViewById(R.id.idcopeminjaman);
         idnasabahpeminjaman= (EditText) view.findViewById(R.id.idnasabahpeminjaman);
         btndaftarpeminjaman =(Button) view.findViewById(R.id.btndaftarpeminjaman);
     }

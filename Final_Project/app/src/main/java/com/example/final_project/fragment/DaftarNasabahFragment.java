@@ -22,8 +22,11 @@ import com.example.final_project.controller.NasabahActivity;
 import com.example.final_project.model.GetAndPostNasabah;
 import com.example.final_project.rest.ApiClient;
 import com.example.final_project.rest.ApiInterface;
+import com.example.final_project.util.Preference;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.gson.JsonObject;
+
+import java.math.BigDecimal;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -35,7 +38,7 @@ public class DaftarNasabahFragment extends Fragment {
    EditText createnamanasabah,createemailnasabah,createnohpnasabah,createalamatnasabah;
    TextView createnikco;
     ApiInterface mApiInterface;
-    LinearLayout fragmentdaftarnasabah;
+    Preference preference;
 
 
     @Override
@@ -60,6 +63,7 @@ public class DaftarNasabahFragment extends Fragment {
 
     private void initData() {
         mApiInterface= ApiClient.getClient(getContext()).create(ApiInterface.class);
+        createnikco.setText(preference.getNik(getContext()));
     }
 
     void onClick() {
