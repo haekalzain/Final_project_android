@@ -19,18 +19,22 @@ import android.widget.Toast;
 
 
 import com.example.final_project.R;
+import com.example.final_project.model.ResponMiddleware;
 import com.example.final_project.rest.ApiClient;
 import com.example.final_project.rest.ApiInterface;
-import com.example.final_project.util.Preference;
 import com.google.gson.JsonObject;
 
 import java.math.BigDecimal;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 
 public class DaftarPeminjamanFragment extends Fragment {
     ApiInterface mApiInterface;
     Button datepicker,btndaftarpeminjaman;
-    TextView cektanggal,idcopeminjaman;
+    TextView cektanggal;
     EditText editjumlahpeminjaman,idnasabahpeminjaman;
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -40,8 +44,8 @@ public class DaftarPeminjamanFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        findViewById(view);
         initData();
+        findViewById(view);
         onClick();
     }
 
@@ -57,11 +61,27 @@ public class DaftarPeminjamanFragment extends Fragment {
              @Override
              public void onClick(View v) {
                  BigDecimal bd=new BigDecimal(editjumlahpeminjaman.getText().toString());
-                 JsonObject o= new JsonObject();
-                 o.addProperty("plafon",bd);
-                 o.addProperty("tes",cektanggal.getText().toString());
-                 o.addProperty("tes2",idnasabahpeminjaman.getText().toString());
-                 Log.e("gggg",o.toString());
+                 JsonObject pinjam= new JsonObject();
+                 pinjam.addProperty("plafon",bd);
+                 pinjam.addProperty("disbursementDate",cektanggal.getText().toString());
+                 pinjam.addProperty("customerId",idnasabahpeminjaman.getText().toString());
+                 Log.e("gggg",pinjam.toString());
+                 Call<ResponMiddleware> responMiddlewareCall = mApiInterface.createPeminjaman(pinjam);
+                 responMiddlewareCall.enqueue(new Callback<ResponMiddleware>() {
+                     @Override
+                     public void onResponse(Call<ResponMiddleware> call, Response<ResponMiddleware> response) {
+
+                         Log.e("zhaba",response.code()+"");
+                         Toast.makeText(getActivity().getApplicationContext(),response.message(),Toast.LENGTH_LONG).show();
+
+                     }
+
+                     @Override
+                     public void onFailure(Call<ResponMiddleware> call, Throwable t) {
+                         Log.e("Error :",t.toString());
+
+                     }
+                 });
 
 
 

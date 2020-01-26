@@ -2,9 +2,11 @@ package com.example.final_project.rest;
 
 import com.example.final_project.model.BaseResponse;
 import com.example.final_project.model.DataLoginCO;
+import com.example.final_project.model.GetAkunNasabah;
 import com.example.final_project.model.GetAndPostNasabah;
 import com.example.final_project.model.GetListNasabah;
 import com.example.final_project.model.Pembayaran;
+import com.example.final_project.model.ResponMiddleware;
 import com.google.gson.JsonObject;
 
 import retrofit2.Call;
@@ -31,4 +33,10 @@ public interface ApiInterface {
     @PUT("/customers/edit/{id}")
     Call<GetAndPostNasabah> updateNasabah(@Path("id") String id,
                                           @Body JsonObject h);
+
+    @POST("/financing/account/input")
+    Call<ResponMiddleware> createPeminjaman(@Body JsonObject pinjam);
+
+    @GET("/financing/account/7987edd7-4a75-4102-b202-00c27b09b636")
+    Call<GetAkunNasabah> getAkunNasabah ();
 }

@@ -23,19 +23,20 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             >
-            <SearchView
+            <EditText
                 android:id="@+id/searchpeminjaman"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:iconifiedByDefault="false"
-                android:queryHint="Search Nasabah"
+                android:hint="Search akun nasabah"
                 app:autoSizeTextType="uniform"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1">
+            android:layout_weight="2">
             <Button
+                android:id="@+id/seacrhakunnasabah"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Search"
@@ -47,11 +48,62 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="6">
-        <ListView
+        android:layout_weight="6"
+        android:orientation="vertical"
+        android:weightSum="6">
+
+        <TextView
+            android:id="@+id/idNasabahTv"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-        </ListView>
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:textSize="25dp"
+            android:hint="id nasabah"/>
+
+        <TextView
+            android:id="@+id/JmlPeminjamanTv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:textSize="25dp"
+            android:hint="Jumlah Peminjaman"/>
+
+        <TextView
+            android:id="@+id/BtsanCicilanTv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:textSize="25dp"
+            android:hint="Batasan cicilan"/>
+
+        <TextView
+            android:id="@+id/RataPeminjamanTv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:textSize="25dp"
+            android:hint="Rata rata Peminjaman"/>
+
+        <TextView
+            android:id="@+id/TglPencairanTv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:textSize="25dp"
+            android:hint="Tanggal Pencairan"/>
+
+        <TextView
+            android:id="@+id/WktuPembayaranTv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:textSize="25dp"
+            android:hint="Waktu Pembayaran"/>
+
+
+
+
+
     </LinearLayout>
 
 

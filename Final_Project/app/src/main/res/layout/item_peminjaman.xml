@@ -9,37 +9,49 @@
 
     <ImageView
         android:id="@+id/fotonasabah"
-        android:layout_width="55dp"
-        android:layout_height="55dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:scaleType="fitXY"
         android:src="@drawable/ibu"/>
     <LinearLayout
         android:layout_toRightOf="@id/fotonasabah"
         android:layout_width="match_parent"
-        android:layout_height="55dp"
+        android:layout_height="100dp"
         android:orientation="vertical"
-        android:layout_marginBottom="13dp">
+        android:textSize="75dp">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1">
 
             <TextView
-                android:id="@+id/nama"
+                android:id="@+id/accountNo"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Nik"/>
+                android:text="No Akun"
+                android:textSize="40dp"
+                />
 
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1">
-            <TextView
-                android:id="@+id/email"
-                android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:text="Nama"/>
+                android:layout_weight="7">
+                <TextView
+                    android:id="@+id/plafon"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="jumlah peminjaman"
+                    android:textSize="40dp"/>
+            </LinearLayout>
+
+
+
         </LinearLayout>
 
     </LinearLayout>

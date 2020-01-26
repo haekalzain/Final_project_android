@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.TextView;
 
 import com.example.final_project.R;
 import com.example.final_project.model.AkunPeminjaman;
@@ -41,6 +42,13 @@ public class ListPeminjamanAdapter extends BaseAdapter {
             LayoutInflater inflater=LayoutInflater.from(this.context);
             convertView=inflater.inflate(R.layout.item_peminjaman,null);
         }
+
+        AkunPeminjaman akunPeminjaman = list.get(position);
+        TextView nomorakun=(TextView) convertView.findViewById(R.id.accountNo);
+        TextView plafon = (TextView)convertView.findViewById(R.id.plafon);
+
+        nomorakun.setText(akunPeminjaman.getAccountNo());
+        plafon.setText(akunPeminjaman.getPlafon().toString());
         return convertView;
     }
 }
