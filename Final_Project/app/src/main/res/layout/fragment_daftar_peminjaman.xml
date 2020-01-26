@@ -7,7 +7,7 @@
     tools:context=".fragment.DaftarNasabahFragment"
     android:layout_weight="4"
     android:orientation="vertical"
-    android:background="@color/colorOrange">
+    android:background="@drawable/header">
 
 
     <LinearLayout

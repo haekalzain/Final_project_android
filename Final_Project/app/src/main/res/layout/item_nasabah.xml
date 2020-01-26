@@ -5,20 +5,38 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_weight=""
     >
 
     <ImageView
         android:id="@+id/fotonasabah"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="120dp"
+        android:layout_height="150dp"
         android:scaleType="fitXY"
         android:src="@drawable/ibu"/>
     <LinearLayout
         android:layout_toRightOf="@id/fotonasabah"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="150dp"
         android:orientation="vertical"
+        android:weightSum="3"
         android:textSize="75dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/id"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="ID"
+                android:textSize="40dp"
+                />
+
+        </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -28,11 +46,12 @@
                 android:id="@+id/nama"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Nik"
+                android:text="Nama"
                 android:textSize="40dp"
                 />
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -46,7 +65,7 @@
                     android:id="@+id/email"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Nama"
+                    android:text="email"
                     android:textSize="40dp"/>
             </LinearLayout>
 
