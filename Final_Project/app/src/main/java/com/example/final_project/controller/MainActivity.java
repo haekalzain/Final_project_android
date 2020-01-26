@@ -4,34 +4,37 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.auth0.android.jwt.Claim;
-import com.auth0.android.jwt.JWT;
 import com.example.final_project.R;
+import com.example.final_project.model.DataCo;
+import com.example.final_project.model.ResponCo;
+import com.example.final_project.rest.ApiClient;
 import com.example.final_project.rest.ApiInterface;
 import com.example.final_project.util.Preference;
-import com.google.gson.JsonObject;
 
-import java.io.UnsupportedEncodingException;
-import java.util.List;
-import java.util.prefs.Preferences;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 
 public class MainActivity extends AppCompatActivity {
+
+     String Nik, Name ;
+    private DataCo co ;
+    ApiInterface mApiInterface;
     ImageButton Nasabah, Finance, Payment, Setting;
     TextView nama, nik;
-    ApiInterface mApiInterface;
-    Preference preference;
+
 
     @Override
     protected void onCreate (Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        mApiInterface= ApiClient.getClient(getApplicationContext()).create(ApiInterface.class);
 
         findViewById();
         onClick();
@@ -39,8 +42,46 @@ public class MainActivity extends AppCompatActivity {
     }
 
     void initData(){
-        nama.setText(new Preference().getName(getApplicationContext()));
-        nik.setText(new Preference().getNik(getApplicationContext()));
+        Nik=( new Preference().getNik(getApplicationContext()));
+        Log.e("aaaa",Nik.toString());
+        Call<ResponCo> CoCall = mApiInterface.getCo(Nik);
+        CoCall.enqueue((new Callback<ResponCo>() {
+            @Override
+            public void onResponse(Call<ResponCo> call, Response<ResponCo> response) {
+                if (response.isSuccessful()) {
+                    Log.e("zzzz",response.message().toString());
+
+                    co = response.body().getCo();
+                    Bundle bundle = new Bundle();
+                    nama.setText(co.getName());
+                    nik.setText(co.getNik());
+                } else {
+                    Toast.makeText(getApplicationContext(), response.message(), Toast.LENGTH_LONG).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponCo> call, Throwable t) {
+
+            }
+        }));
+
+
+
+
+
+//
+//
+//        Bundle bundle = getIntent().getExtras();
+//        Name = bundle.getString("name");
+//        Nik = bundle.getString("nik");
+//
+//        nama.setText(Name);
+//        nik.setText(Nik);
+//
+//
+//        nama.setText(new Preference().getName(getApplicationContext()));
+//        nik.setText(new Preference().getNik(getApplicationContext()));
     }
 
     void findViewById(){
@@ -82,10 +123,36 @@ public class MainActivity extends AppCompatActivity {
         Setting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, SettingActivity.class);
-                startActivity(intent);
+                Nik=( new Preference().getNik(getApplicationContext()));
+                Log.e("aaaa",Nik.toString());
+                Call<ResponCo> CoCall = mApiInterface.getCo(Nik);
+                CoCall.enqueue(new Callback<ResponCo>() {
+                    @Override
+                    public void onResponse(Call<ResponCo> call, Response<ResponCo> response) {
+                        if (response.isSuccessful()) {
+                            Log.e("zzzz",response.message().toString());
+
+                            co = response.body().getCo();
+                            Intent intent = new Intent(MainActivity.this, DetailCoActivity.class);
+                            Bundle bundle = new Bundle();
+                            bundle.putString("name",co.getName());
+                            bundle.putString("nik",co.getNik());
+                            bundle.putString("address",co.getAddres());
+                            bundle.putString("email",co.getEmail());
+                            intent.putExtras(bundle);
+                            startActivity(intent);
+                        } else {
+                            Toast.makeText(getApplicationContext(), response.message(), Toast.LENGTH_LONG).show();
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<ResponCo> call, Throwable t) {
+                        Log.e("aaaa",t.toString());
+
+                    }
+                });
             }
         });
-
     }
 }
