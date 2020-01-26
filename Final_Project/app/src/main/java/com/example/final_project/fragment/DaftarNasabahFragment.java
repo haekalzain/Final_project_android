@@ -13,15 +13,20 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.final_project.R;
 import com.example.final_project.controller.NasabahActivity;
 import com.example.final_project.model.GetAndPostNasabah;
 import com.example.final_project.rest.ApiClient;
 import com.example.final_project.rest.ApiInterface;
+import com.example.final_project.util.Preference;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.gson.JsonObject;
+
+import java.math.BigDecimal;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -33,6 +38,7 @@ public class DaftarNasabahFragment extends Fragment {
    EditText createnamanasabah,createemailnasabah,createnohpnasabah,createalamatnasabah;
    TextView createnikco;
     ApiInterface mApiInterface;
+    Preference preference;
 
 
     @Override
@@ -57,6 +63,7 @@ public class DaftarNasabahFragment extends Fragment {
 
     private void initData() {
         mApiInterface= ApiClient.getClient(getContext()).create(ApiInterface.class);
+        createnikco.setText(preference.getNik(getContext()));
     }
 
     void onClick() {
@@ -71,7 +78,7 @@ public class DaftarNasabahFragment extends Fragment {
                 o.addProperty("phone",createnohpnasabah.getText().toString());
                 o.addProperty("customer_nik",createnikco.getText().toString());
 
-                Log.e("zzzz",o.toString());
+                Log.e("isi json",o.toString());
 
                 Call<GetAndPostNasabah> nasabahCalled = mApiInterface.createNasabah(o);
                 nasabahCalled.enqueue(new Callback<GetAndPostNasabah>() {
@@ -79,17 +86,17 @@ public class DaftarNasabahFragment extends Fragment {
                     public void onResponse(Call<GetAndPostNasabah> call, Response<GetAndPostNasabah> response) {
                         Log.e("zzzz",response.code()+"");
                         if(response.code()== 400){
-                            Snackbar.make(getActivity().findViewById(R.id.fragmentdaftarnasabah),
-                                    response.message(), Snackbar.LENGTH_SHORT).show();
+                            Toast.makeText(getActivity().getApplicationContext(),response.message(),Toast.LENGTH_LONG).show();
+
                         }
                         else{
+                            Snackbar.make(getActivity().findViewById(R.id.fragmentdaftarnasabah),
+                                    "text to show", Snackbar.LENGTH_LONG).show();
+                            Toast.makeText(getActivity().getApplicationContext(),response.message(),Toast.LENGTH_LONG).show();
                             Intent a = new Intent(getActivity(), NasabahActivity.class);
                             startActivity(a);
                             getActivity().finish();
-                            Snackbar.make(getActivity().findViewById(R.id.fragmentdaftarnasabah),
-                                    response.message(), Snackbar.LENGTH_SHORT).show();
                         }
-//                        Toast.makeText(getActivity().getApplicationContext(),response.message(),Toast.LENGTH_LONG).show();
                     }
 
                     @Override
@@ -108,6 +115,7 @@ public class DaftarNasabahFragment extends Fragment {
         createnohpnasabah = (EditText) view.findViewById(R.id.createnohpnasabah);
         createalamatnasabah = (EditText) view.findViewById(R.id.createalamatnasabah);
         createnikco = (TextView) view.findViewById(R.id.createnikco);
+
 
     }
 }

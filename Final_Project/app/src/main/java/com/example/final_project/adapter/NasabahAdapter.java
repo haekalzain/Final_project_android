@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.final_project.R;
@@ -15,6 +16,7 @@ import java.util.List;
 public class NasabahAdapter extends BaseAdapter {
     Context context;
     private List<Nasabah> list;
+
 
     public NasabahAdapter(Context context,List<Nasabah> list){
         this.context=context;
@@ -45,8 +47,6 @@ public class NasabahAdapter extends BaseAdapter {
         Nasabah nasabah = list.get(position);
         TextView email =(TextView) convertView.findViewById(R.id.email);
         TextView nama = (TextView)convertView.findViewById(R.id.nama);
-
-
         email.setText(nasabah.getEmail());
         nama.setText(nasabah.getName());
         return convertView;

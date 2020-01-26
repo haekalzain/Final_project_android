@@ -7,6 +7,7 @@
     tools:context=".controller.NasabahActivity"
     android:orientation="vertical"
     android:layout_weight="9"
+    android:id="@+id/nasabahactivity"
     android:background="@drawable/header">
     <LinearLayout
         android:layout_width="match_parent"
@@ -125,7 +126,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="7">
+        android:layout_weight="10">
         <FrameLayout
             android:id="@+id/framenasabah"
             android:layout_width="match_parent"

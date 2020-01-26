@@ -86,36 +86,6 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:orientation="horizontal">
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="2">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="Id:"
-                    app:autoSizeTextType="uniform"/>
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="3">
-                <TextView
-                    android:id="@+id/idnasabahupdate"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="Id nasabah 1"
-                    app:autoSizeTextType="uniform"/>
-            </LinearLayout>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -124,6 +94,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="Nama:"
+                    android:textColor="@color/colorWhite"
                     app:autoSizeTextType="uniform"/>
 
             </LinearLayout>
@@ -152,6 +123,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="Email:"
+                    android:textColor="@color/colorWhite"
                     app:autoSizeTextType="uniform"/>
 
             </LinearLayout>
@@ -179,6 +151,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="Alamat:"
+                    android:textColor="@color/colorWhite"
                     app:autoSizeTextType="uniform"/>
 
             </LinearLayout>
@@ -207,6 +180,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="No Telpon:"
+                    android:textColor="@color/colorWhite"
                     app:autoSizeTextType="uniform"/>
 
             </LinearLayout>
@@ -235,6 +209,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1">
+
 
         </LinearLayout>
         <LinearLayout
