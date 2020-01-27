@@ -13,17 +13,33 @@ public class AkunPeminjaman {
     @SerializedName("customerId")
     String customerId;
     @SerializedName("plafon")
-    BigDecimal plafon;
+    Double plafon;
     @SerializedName("tenor")
     Integer tenor;
     @SerializedName("margin")
-    BigDecimal margin;
+    Double margin;
     @SerializedName("disbursementDate")
     String disbursementDate;
     @SerializedName("dueDate")
     String dueDate;
     @SerializedName("scheduleList")
     List<JadwalBayar> jadwalBayarList;
+
+    public Double getPlafon() {
+        return plafon;
+    }
+
+    public void setPlafon(Double plafon) {
+        this.plafon = plafon;
+    }
+
+    public Double getMargin() {
+        return margin;
+    }
+
+    public void setMargin(Double margin) {
+        this.margin = margin;
+    }
 
     public String getAccountNo() {
         return accountNo;
@@ -41,13 +57,6 @@ public class AkunPeminjaman {
         this.customerId = customerId;
     }
 
-    public BigDecimal getPlafon() {
-        return plafon;
-    }
-
-    public void setPlafon(BigDecimal plafon) {
-        this.plafon = plafon;
-    }
 
     public Integer getTenor() {
         return tenor;
@@ -57,13 +66,7 @@ public class AkunPeminjaman {
         this.tenor = tenor;
     }
 
-    public BigDecimal getMargin() {
-        return margin;
-    }
 
-    public void setMargin(BigDecimal margin) {
-        this.margin = margin;
-    }
 
     public String getDisbursementDate() {
         return disbursementDate;

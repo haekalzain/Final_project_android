@@ -7,6 +7,7 @@ public class Preference {
     static final  String tokend = "TOKEN";
     static final  String named = "NAME";
     static  final String niked = "NIK";
+    static final String idnasabah ="id";
 
 
     private static SharedPreferences getSharedPreferences (Context context){
@@ -40,6 +41,15 @@ public class Preference {
 
     public static  String getNik(Context context){
         return getSharedPreferences(context).getString(niked,"");
+    }
+    public static  void  setIdnasabah (Context context, String id){
+        SharedPreferences.Editor editor = getSharedPreferences(context).edit();
+        editor.putString( idnasabah, id);
+        editor.apply();
+    }
+
+    public static  String getIdnasabah(Context context){
+        return getSharedPreferences(context).getString(idnasabah,"");
     }
 }
 

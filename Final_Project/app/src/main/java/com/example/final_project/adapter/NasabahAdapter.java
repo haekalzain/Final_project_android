@@ -47,8 +47,10 @@ public class NasabahAdapter extends BaseAdapter {
         Nasabah nasabah = list.get(position);
         TextView email =(TextView) convertView.findViewById(R.id.email);
         TextView nama = (TextView)convertView.findViewById(R.id.nama);
+        TextView id =(TextView) convertView.findViewById(R.id.id);
         email.setText(nasabah.getEmail());
         nama.setText(nasabah.getName());
+        id.setText(nasabah.getPhone());
         return convertView;
     }
 }

@@ -1,5 +1,6 @@
 package com.example.final_project.fragment;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -20,11 +21,14 @@ import com.example.final_project.adapter.ListPeminjamanAdapter;
 import com.example.final_project.adapter.NasabahAdapter;
 import com.example.final_project.model.AkunPeminjaman;
 import com.example.final_project.model.GetAkunNasabah;
+import com.example.final_project.model.JadwalBayar;
 import com.example.final_project.model.Nasabah;
 import com.example.final_project.model.ResponMiddleware;
 import com.example.final_project.rest.ApiClient;
 import com.example.final_project.rest.ApiInterface;
+import com.example.final_project.util.Preference;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -36,8 +40,9 @@ public class ListPeminjamanFragment extends Fragment {
     ApiInterface mApiInterface;
     EditText searchpeminjaman;
     Button btnsearchakunnasabah;
-    TextView WktuPembayaranTv,TglPencairanTv,RataPeminjamanTv,BtsanCicilanTv,JmlPeminjamanTv,idNasabahTv;
-    AkunPeminjaman akunPeminjaman = new AkunPeminjaman();
+   ListView listkodebayar;
+   ListPeminjamanAdapter listPeminjamanAdapter;
+    private List<JadwalBayar> jadwalBayarList;
 
 
     @Override
@@ -52,25 +57,39 @@ public class ListPeminjamanFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         mApiInterface= ApiClient.getClient(getContext()).create(ApiInterface.class);
         findViewById(view);
+        initData();
         OnClick();
-        btnsearchakunnasabah.callOnClick();
+
+    }
+
+    void initData() {
+        jadwalBayarList = new ArrayList();
+        jadwalBayarList.clear();
+        listPeminjamanAdapter = new ListPeminjamanAdapter(getActivity().getApplicationContext(),jadwalBayarList);
+        listkodebayar.setAdapter(listPeminjamanAdapter);
+        listPeminjamanAdapter.notifyDataSetChanged();
+        searchpeminjaman.setText(Preference.getIdnasabah(getActivity().getApplicationContext()));
+
     }
 
     void OnClick() {
         btnsearchakunnasabah.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
+
+            String id =searchpeminjaman.getText().toString();
             Log.e("aaaa","aaaaa");
-            Call<GetAkunNasabah> responMiddlewareCall = mApiInterface.getAkunNasabah();
+            Call<GetAkunNasabah> responMiddlewareCall = mApiInterface.getAkunNasabah(id);
             Log.e("bbbb",responMiddlewareCall.toString());
             responMiddlewareCall.enqueue(new Callback<GetAkunNasabah>() {
                 @Override
                 public void onResponse(Call<GetAkunNasabah> call, Response<GetAkunNasabah> response) {
-                    Log.e("gggg",response.body().getAkunPeminjaman().getAccountNo());
-                    akunPeminjaman = response.body().getAkunPeminjaman();
-                    WktuPembayaranTv.setText(response.body().getAkunPeminjaman().getDueDate());
-                    TglPencairanTv.setText(akunPeminjaman.getDisbursementDate());
-                    JmlPeminjamanTv.setText(akunPeminjaman.getPlafon()+"");
+                    Log.e("gggg",response.body().getJadwalBayar().get(0).getTrxId());
+                    List<JadwalBayar> listkode = response.body().getJadwalBayar();
+                    jadwalBayarList.clear();
+                    jadwalBayarList.addAll(listkode);
+                    listPeminjamanAdapter.notifyDataSetChanged();
+
                 }
 
                 @Override
@@ -80,28 +99,18 @@ public class ListPeminjamanFragment extends Fragment {
             });
         }
     });
-
-
     }
 
 
     void findViewById(View view) {
         btnsearchakunnasabah= (Button) view.findViewById(R.id.seacrhakunnasabah);
         searchpeminjaman =(EditText) view.findViewById(R.id.searchpeminjaman);
-        WktuPembayaranTv =(TextView) view.findViewById(R.id.WktuPembayaranTv);
-        TglPencairanTv =(TextView) view.findViewById(R.id.TglPencairanTv);
-        RataPeminjamanTv =(TextView) view.findViewById(R.id.RataPeminjamanTv);
-        BtsanCicilanTv =(TextView) view.findViewById(R.id.BtsanCicilanTv);
-        JmlPeminjamanTv =(TextView) view.findViewById(R.id.JmlPeminjamanTv);
-        idNasabahTv =(TextView) view.findViewById(R.id.idNasabahTv);
+        listkodebayar =(ListView) view.findViewById(R.id.listkodebayar);
     }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_list_peminjaman, container, false);
     }
-
-
 }

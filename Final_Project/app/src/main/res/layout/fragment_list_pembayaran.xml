@@ -24,7 +24,7 @@
             android:layout_weight="1"
             >
             <SearchView
-                android:id="@+id/searchpeminjaman"
+                android:id="@+id/searchpembayaran"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:iconifiedByDefault="false"

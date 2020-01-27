@@ -234,7 +234,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="Peminjaman"
+                        android:text="Pemodalan"
                         android:textStyle="bold"
                         android:textSize="18dp"
                         android:textAlignment="center"/>

@@ -9,14 +9,15 @@ import android.widget.TextView;
 
 import com.example.final_project.R;
 import com.example.final_project.model.AkunPeminjaman;
+import com.example.final_project.model.JadwalBayar;
 
 import java.util.List;
 
 public class ListPeminjamanAdapter extends BaseAdapter {
     Context context;
-    private List<AkunPeminjaman> list;
+    private List<JadwalBayar> list;
 
-    public ListPeminjamanAdapter (Context context,List<AkunPeminjaman> list){
+    public ListPeminjamanAdapter (Context context,List<JadwalBayar> list){
         this.context=context;
         this.list=list;
     }
@@ -43,12 +44,17 @@ public class ListPeminjamanAdapter extends BaseAdapter {
             convertView=inflater.inflate(R.layout.item_peminjaman,null);
         }
 
-        AkunPeminjaman akunPeminjaman = list.get(position);
-        TextView nomorakun=(TextView) convertView.findViewById(R.id.accountNo);
-        TextView plafon = (TextView)convertView.findViewById(R.id.plafon);
+        JadwalBayar jadwalBayar = list.get(position);
+        TextView kodebayar=(TextView) convertView.findViewById(R.id.trxid);
+        kodebayar.setText(jadwalBayar.getTrxId());
+        TextView scheduledate=(TextView)convertView.findViewById(R.id.scdlDate);
+        scheduledate.setText(jadwalBayar.getScheduleDate());
+        TextView paid =(TextView)convertView.findViewById(R.id.paid);
+        scheduledate.setText(jadwalBayar.getPaid().toString());
+        String jmlBayar = String.valueOf(jadwalBayar.getProfitShare().add(jadwalBayar.getPrincipal()));
+        TextView jumlahbayar=(TextView)convertView.findViewById(R.id.jmlBayar);
+        jumlahbayar.setText(jmlBayar);
 
-        nomorakun.setText(akunPeminjaman.getAccountNo());
-        plafon.setText(akunPeminjaman.getPlafon().toString());
         return convertView;
     }
 }

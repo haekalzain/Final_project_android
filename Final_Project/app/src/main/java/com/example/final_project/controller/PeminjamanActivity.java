@@ -21,6 +21,7 @@ import com.example.final_project.fragment.ListPeminjamanFragment;
 public class PeminjamanActivity extends AppCompatActivity {
     FrameLayout framepeminjaman;
     FragmentTransaction fm;
+    String id;
     LinearLayout lldatapeminjaman,lldaftarpeminjaman,efekdatapeminjaman,efekdaftarpeminjaman,back;
     TextView datapeminjaman,daftarpeminjaman;
     @Override
@@ -29,10 +30,11 @@ public class PeminjamanActivity extends AppCompatActivity {
         setContentView(R.layout.activity_peminjaman);
         findViewById();
         initAction();
-        lldatapeminjaman.callOnClick();
+        lldaftarpeminjaman.callOnClick();
     }
 
-     void initAction() {
+
+    void initAction() {
          lldatapeminjaman.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View v) {

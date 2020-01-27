@@ -1,6 +1,7 @@
 package com.example.final_project.fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -18,6 +19,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.final_project.R;
+import com.example.final_project.controller.MainActivity;
+import com.example.final_project.controller.PeminjamanActivity;
 import com.example.final_project.model.Pembayaran;
 import com.example.final_project.rest.ApiClient;
 import com.example.final_project.rest.ApiInterface;
@@ -72,6 +75,9 @@ Preference preference;
                     public void onResponse(Call<Pembayaran> call, Response<Pembayaran> response) {
                         if(response.isSuccessful()){
                             Toast.makeText(getActivity().getApplicationContext(), response.message(), Toast.LENGTH_LONG).show();
+                            Intent a = new Intent(getActivity(), MainActivity.class);
+                            startActivity(a);
+                            getActivity().finish();
                         }
                     }
 

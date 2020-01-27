@@ -32,7 +32,7 @@ public class NasabahActivity extends AppCompatActivity {
         findViewById();
 
         initAction();
-        lldatanasabah.callOnClick();
+        lldaftarnasabah.callOnClick();
 
     }
 

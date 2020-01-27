@@ -19,9 +19,13 @@ import android.widget.Toast;
 
 
 import com.example.final_project.R;
+import com.example.final_project.controller.MainActivity;
+import com.example.final_project.controller.NasabahActivity;
+import com.example.final_project.controller.PeminjamanActivity;
 import com.example.final_project.model.ResponMiddleware;
 import com.example.final_project.rest.ApiClient;
 import com.example.final_project.rest.ApiInterface;
+import com.example.final_project.util.Preference;
 import com.google.gson.JsonObject;
 
 import java.math.BigDecimal;
@@ -67,19 +71,23 @@ public class DaftarPeminjamanFragment extends Fragment {
                  pinjam.addProperty("customerId",idnasabahpeminjaman.getText().toString());
                  Log.e("gggg",pinjam.toString());
                  Call<ResponMiddleware> responMiddlewareCall = mApiInterface.createPeminjaman(pinjam);
+                 Log.e("gggg1",responMiddlewareCall.toString());
+//                 Intent a = new Intent(getActivity(), MainActivity.class);
+//                 startActivity(a);
+//                 getActivity().finish();
                  responMiddlewareCall.enqueue(new Callback<ResponMiddleware>() {
                      @Override
                      public void onResponse(Call<ResponMiddleware> call, Response<ResponMiddleware> response) {
 
                          Log.e("zhaba",response.code()+"");
-                         Toast.makeText(getActivity().getApplicationContext(),response.message(),Toast.LENGTH_LONG).show();
-
+                         Toast.makeText(getActivity().getApplicationContext(),response.body().getMessage().getAkunPeminjaman().getAccountNo(),Toast.LENGTH_LONG).show();
+                         Preference.setIdnasabah(getActivity().getApplicationContext(),response.body().getMessage().getAkunPeminjaman().getAccountNo());
                      }
 
                      @Override
                      public void onFailure(Call<ResponMiddleware> call, Throwable t) {
                          Log.e("Error :",t.toString());
-
+                         ;
                      }
                  });
 

@@ -19,40 +19,64 @@
         android:layout_height="100dp"
         android:orientation="vertical"
         android:textSize="75dp">
+
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1">
-
+            android:layout_height="0dp"
+            android:layout_weight="0.5">
             <TextView
-                android:id="@+id/accountNo"
+                android:id="@+id/scdlDate"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="No Akun"
-                android:textSize="40dp"
+                android:text="Schedule Pembayaran"
+                android:textSize="25dp"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5">
+
+            <TextView
+                android:id="@+id/trxid"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Kode Pembayaran"
+                android:textSize="25dp"
                 />
 
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-            <LinearLayout
-                android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="0.5">
+
+            <TextView
+                android:id="@+id/paid"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="7">
-                <TextView
-                    android:id="@+id/plafon"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="jumlah peminjaman"
-                    android:textSize="40dp"/>
-            </LinearLayout>
-
-
+                android:text="False"
+                android:textSize="25dp"
+                />
 
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5">
+
+            <TextView
+                android:id="@+id/jmlBayar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Jumlah Bayar"
+                android:textSize="25dp"
+                />
+        </LinearLayout>
+
 
     </LinearLayout>
 </RelativeLayout>

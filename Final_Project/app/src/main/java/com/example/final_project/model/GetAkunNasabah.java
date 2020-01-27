@@ -2,15 +2,17 @@ package com.example.final_project.model;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.List;
+
 public class GetAkunNasabah extends BaseResponse {
     @SerializedName("data")
-    AkunPeminjaman akunPeminjaman;
+    List<JadwalBayar> jadwalBayar;
 
-    public AkunPeminjaman getAkunPeminjaman() {
-        return akunPeminjaman;
+    public List<JadwalBayar> getJadwalBayar() {
+        return jadwalBayar;
     }
 
-    public void setAkunPeminjaman(AkunPeminjaman akunPeminjaman) {
-        this.akunPeminjaman = akunPeminjaman;
+    public void setJadwalBayar(List<JadwalBayar> jadwalBayar) {
+        this.jadwalBayar = jadwalBayar;
     }
 }

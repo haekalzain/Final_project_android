@@ -48,6 +48,6 @@ public interface ApiInterface {
     @POST("/financing/account/input")
     Call<ResponMiddleware> createPeminjaman(@Body JsonObject pinjam);
 
-    @GET("/financing/account/7987edd7-4a75-4102-b202-00c27b09b636")
-    Call<GetAkunNasabah> getAkunNasabah ();
+    @GET("/financing/schedule/{id}")
+    Call<GetAkunNasabah> getAkunNasabah (@Path("id") String id);
 }

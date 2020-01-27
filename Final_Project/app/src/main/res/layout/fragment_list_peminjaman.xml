@@ -52,58 +52,10 @@
         android:orientation="vertical"
         android:weightSum="6">
 
-        <TextView
-            android:id="@+id/idNasabahTv"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:textSize="25dp"
-            android:hint="id nasabah"/>
-
-        <TextView
-            android:id="@+id/JmlPeminjamanTv"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:textSize="25dp"
-            android:hint="Jumlah Peminjaman"/>
-
-        <TextView
-            android:id="@+id/BtsanCicilanTv"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:textSize="25dp"
-            android:hint="Batasan cicilan"/>
-
-        <TextView
-            android:id="@+id/RataPeminjamanTv"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:textSize="25dp"
-            android:hint="Rata rata Peminjaman"/>
-
-        <TextView
-            android:id="@+id/TglPencairanTv"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:textSize="25dp"
-            android:hint="Tanggal Pencairan"/>
-
-        <TextView
-            android:id="@+id/WktuPembayaranTv"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:textSize="25dp"
-            android:hint="Waktu Pembayaran"/>
-
-
-
-
-
+    <ListView
+        android:id="@+id/listkodebayar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
     </LinearLayout>
 
 

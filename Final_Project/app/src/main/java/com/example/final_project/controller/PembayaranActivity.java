@@ -28,7 +28,7 @@ public class PembayaranActivity extends AppCompatActivity {
         setContentView(R.layout.activity_pembayaran);
         findViewById();
         initAction();
-        lldatapembayaran.callOnClick();
+        lldaftarpembayaran.callOnClick();
     }
 
      void initAction() {

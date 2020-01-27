@@ -47,7 +47,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Peminjaman"
+                    android:text="Pemodalan"
                     android:textStyle="bold"
                     android:textSize="25dp"
                     android:textColor="@color/colorWhite"/>
@@ -119,7 +119,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:gravity="bottom|center_horizontal"
-                            android:text="Data Peminjaman"
+                            android:text="Data Pemodalan"
                             android:textColor="#fff"
                             android:textStyle="bold"
                             android:textSize="20dp"
@@ -172,7 +172,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:gravity="bottom|center_horizontal"
-                            android:text="Daftar Peminjaman"
+                            android:text="Daftar Pemodalan"
                             android:textColor="#fff"
                             android:textStyle="bold"
                             android:textAlignment="center"
