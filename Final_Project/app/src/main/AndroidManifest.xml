@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.final_project">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,7 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".controller.LoginActivity"></activity>
+
+        <activity android:name=".controller.DetailCoActivity"></activity>
+        <activity android:name=".controller.SettingActivity" />
+        <activity android:name=".controller.DetailNasabahActivity"/>
+        <activity android:name=".controller.ForgetPasswordActivity" />
         <activity android:name=".controller.MainActivity" />
         <activity android:name=".controller.SplashActivity">
             <intent-filter>
@@ -18,6 +24,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".controller.PeminjamanActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".controller.LoginActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".controller.NasabahActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".controller.PembayaranActivity"
+            android:screenOrientation="portrait" />
+
     </application>
 
 </manifest>
