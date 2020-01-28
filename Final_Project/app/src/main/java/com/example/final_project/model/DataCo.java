@@ -2,7 +2,10 @@ package com.example.final_project.model;
 
 import com.google.gson.annotations.SerializedName;
 
-public class DataCo {
+import java.io.Serializable;
+
+public class DataCo implements Serializable {
+
     @SerializedName("emp_id")
     Integer emp_id;
     @SerializedName("nik")

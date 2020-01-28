@@ -66,23 +66,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         }));
-
-
-
-
-
-//
-//
-//        Bundle bundle = getIntent().getExtras();
-//        Name = bundle.getString("name");
-//        Nik = bundle.getString("nik");
-//
-//        nama.setText(Name);
-//        nik.setText(Nik);
-//
-//
-//        nama.setText(new Preference().getName(getApplicationContext()));
-//        nik.setText(new Preference().getNik(getApplicationContext()));
     }
 
     void findViewById(){
